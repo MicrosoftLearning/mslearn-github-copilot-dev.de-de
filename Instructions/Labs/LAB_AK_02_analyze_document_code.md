@@ -6,29 +6,29 @@ lab:
 
 # Analysieren und Dokumentieren von Code mithilfe von GitHub Copilot
 
-GitHub Copilot kann Ihnen dabei helfen, eine Codebasis zu verstehen und zu dokumentieren, indem Erklärungen und Dokumentation generiert werden. In dieser Übung verwenden Sie GitHub Copilot, um eine Codebasis zu analysieren und Dokumentationen für das Projekt zu generieren.
+GitHub Copilot kann Ihnen dabei helfen, eine Codebasis zu verstehen und zu dokumentieren, indem Erklärungen und Dokumentation generiert werden. In dieser Übung verwenden Sie GitHub Copilot, um eine Codebasis zu analysieren und Dokumentation für das Projekt zu generieren.
 
 Diese Übung dauert ca. **20** Minuten.
 
-> **WICHTIG:** Um diese Übung abzuschließen, müssen Sie ein eigenes GitHub-Konto und ein eigenes GitHub Copilot-Abonnement bereitstellen. Wenn Sie kein GitHub-Konto haben, können Sie sich für ein kostenloses eigenes Konto <a href="https://github.com/" target="_blank">registrieren</a> und einen GitHub Copilot Free-Plan verwenden, um die Übung abzuschließen. Wenn Sie Zugriff auf ein GitHub Copilot Pro-, GitHub Copilot Pro+-, GitHub Copilot Business- oder GitHub Copilot Enterprise-Abonnement in Ihrer Übungsumgebung haben, können Sie Ihr vorhandenes GitHub Copilot-Abonnement verwenden, um diese Übung abzuschließen.
+> **WICHTIG:** Um diese Übung abzuschließen, benötigen Sie ein eigenes GitHub-Konto und ein GitHub Copilot-Abonnement. Falls Sie kein GitHub-Konto haben, können Sie sich für ein kostenloses Einzelkonto <a href="https://github.com/" target="_blank">registrieren</a> und den GitHub Copilot Free-Plan verwenden, um die Übung abzuschließen. Wenn Sie Zugriff auf ein GitHub Copilot Pro-, GitHub Copilot Pro+-, GitHub Copilot Business- oder GitHub Copilot Enterprise-Abonnement in Ihrer Labumgebung haben, können Sie Ihr vorhandenes GitHub Copilot-Abonnement für diese Übung verwenden.
 
 ## Vor der Installation
 
-Ihre Übungsumgebung muss Folgendes enthalten: Git 2.48 oder höher, .NET SDK 9.0 oder höher, Visual Studio Code mit der C#Dev Kit-Erweiterung und Zugriff auf ein GitHub-Konto mit aktiviertem GitHub Copilot.
+Ihre Übungsumgebung muss die folgenden Voraussetzungen erfüllen: Git 2.48 oder höher, .NET SDK 9.0 oder höher, Visual Studio Code mit der C# -Dev-Kit-Erweiterung und Zugriff auf ein GitHub-Konto mit aktiviertem GitHub Copilot.
 
 Wenn Sie einen lokalen PC als Übungsumgebung für diese Übung verwenden, gilt Folgendes:
 
-- Um Hilfe beim Konfigurieren Ihres lokalen PCs als Übungsumgebung zu erhalten, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Konfigurieren Sie die Ressourcen Ihrer Übungsumgebung</a>.
+- Wenn Sie Hilfe beim Konfigurieren Ihres lokalen PCs als Labumgebung benötigen, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Konfigurieren der Ressourcen für Ihre Labumgebung</a>.
 
-- Um Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code zu erhalten, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren Sie GitHub Copilot in Visual Studio Code</a>.
+- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
 
-Wenn Sie eine gehostete Übungsumgebung für diese Übung verwenden, gilt Folgendes:
+Wenn Sie eine gehostete Labumgebung für diese Übung verwenden, gilt Folgendes:
 
-- Um Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code zu erhalten, fügen Sie die folgende URL in die Seitennavigationsleiste eines Browsers ein: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren Sie GitHub Copilot in Visual Studio Code</a>.
+- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, fügen Sie den folgenden Link in die Navigationsleiste eines Browsers ein: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
 
-- Öffnen Sie eine Eingabeaufforderung, und führen Sie die folgenden Befehle aus:
+- So stellen Sie sicher, dass das .NET SDK für die Verwendung des offiziellen NuGet.org-Repositorys als Quelle zum Herunterladen und Wiederherstellen von Paketen konfiguriert ist:
 
-    Um sicherzustellen, dass Visual Studio Code für die Verwendung der richtigen Version von .NET konfiguriert ist, führen Sie den folgenden Befehl aus:
+    Öffnen Sie ein Befehlsterminal, und führen Sie den folgenden Befehl aus:
 
     ```bash
 
@@ -38,9 +38,9 @@ Wenn Sie eine gehostete Übungsumgebung für diese Übung verwenden, gilt Folgen
 
 ## Übungsszenario
 
-Sie sind Entwicklerin bzw. Entwickler und arbeiten in der IT-Abteilung Ihrer lokalen Community. Die Back-End-Systeme, die die öffentliche Bibliothek unterstützen, wurden in einem Brand zerstört. Ihr Team muss eine temporäre Lösung entwickeln, damit die Mitarbeitenden der Bibliothek ihre Vorgänge verwalten können, bis das System ersetzt werden kann. Ihr Team hat GitHub Copilot ausgewählt, um den Entwicklungsprozess zu beschleunigen.
+Sie arbeiten in der Programmierung, und zwar bei der IT-Abteilung Ihrer Gemeinde. Die Back-End-Systeme, die die öffentliche Bibliothek unterstützen, wurden bei einem Brand zerstört. Ihr Team muss eine temporäre Lösung entwickeln, damit die Mitarbeitenden der Bibliothek ihre Vorgänge verwalten können, bis das System ersetzt werden kann. Ihr Team hat GitHub Copilot ausgewählt, um den Entwicklungsprozess zu beschleunigen.
 
-Ein Teammitglied hat eine erste Version der Bibliotheksanwendung entwickelt, aber aufgrund von Zeiteinschränkungen hatte es keine Chance, den Code zu dokumentieren. Sie müssen die Codebasis analysieren und Dokumentation für das Projekt erstellen.
+Ein Teammitglied hat eine erste Version der Bibliotheksanwendung entwickelt. Aufgrund von Zeiteinschränkungen wurde der Code jedoch nicht dokumentiert. Sie müssen die Codebasis analysieren und ein Dokumentation für das Projekt erstellen.
 
 Diese Übung umfasst die folgenden Aufgaben:
 
@@ -76,7 +76,7 @@ Gehen Sie folgendermaßen vor, um die Bibliotheksanwendung einzurichten:
 
     Zum Beispiel:
 
-    1. Öffnen Sie Visual Studio Code in Ihrer Übungsumgebung.
+    1. Öffnen Sie Visual Studio Code in Ihrer Labumgebung.
 
     1. Wählen Sie in Visual Studio Code im Menü **Datei** die Option **Ordner öffnen** aus.
 
@@ -104,10 +104,10 @@ GitHub Copilot kann Ihnen helfen, eine unbekannte Codebasis zu verstehen, indem 
 
 ### Analysieren von Code mithilfe von Prompts in der Chat-Ansicht
 
-Die Chat-Ansicht von GitHub Copilot enthält eine chatbasierte Schnittstelle, über die Sie mit GitHub Copilot mithilfe von Prompts in natürlicher Sprache interagieren können. Beim erstmaligen Testen einer vorhandenen Codebasis können Sie Prompts erstellen, die eine Erklärung auf Arbeitsbereich- oder Projektebene oder auf Codeblock- oder Codezeilenebene generieren. Um Ihnen bei der Angabe des Kontexts Ihres Prompts zu helfen, stellt GitHub Copilot Chat-Teilnehmende, Chat-Variablen und Slash-Befehle bereit.
+Die Chatansicht von GitHub Copilot enthält eine chatbasierte Schnittstelle, über die Sie mit Prompts in natürlicher Sprache mit GitHub Copilot interagieren können. Beim erstmaligen Auswerten einer bestehenden Codebasis können Sie Prompts erstellen, die eine Erklärung auf Arbeitsbereichs- oder Projektebene oder auf Codeblock- oder Codezeilenebene generieren. Um Ihnen bei der Angabe des Kontexts Ihres Prompts zu helfen, stellt GitHub Copilot Chatkomponenten, Chatvariablen und Slashbefehle bereit.
 
-- Chat-Teilnehmende werden verwendet, um Ihren Prompt auf eine bestimmte Domäne festzulegen.
-- Chat-Variablen werden verwendet, um bestimmten Kontext in Ihren Prompt einzuschließen.
+- Chatkomponenten werden verwendet, um Ihren Prompt auf eine bestimmte Domäne festzulegen.
+- Chatvariablen werden verwendet, um bestimmten Kontext in Ihren Prompt einzuschließen.
 - Slash-Befehle werden verwendet, um komplexe Prompts für häufige Szenarien zu vermeiden.
 
 Führen Sie die folgenden Schritte aus, um diesen Abschnitt der Übung zu absolvieren:
@@ -116,13 +116,13 @@ Führen Sie die folgenden Schritte aus, um diesen Abschnitt der Übung zu absolv
 
 1. Öffnen Sie die Chat-Ansicht von GitHub Copilot.
 
-    Um die Chat-Ansicht zu öffnen, wählen Sie oben im Fenster von Visual Studio Code die Schaltfläche **Chat umschalten** aus.
+    Um die Chatansicht zu öffnen, wählen Sie oben im Fenster von Visual Studio Code die Schaltfläche **Chat umschalten** aus.
 
     ![Screenshot des Statusmenüs von GitHub Copilot.](./Media/m02-github-copilot-toggle-chat.png)
 
-    Sie können die Chat-Ansicht auch mit der Tastenkombination **STRG+ALT+I** öffnen.
+    Sie können die Chatansicht auch mit der Tastenkombination **STRG+ALT+I** öffnen.
 
-1. Öffnen Sie die Chat-Ansicht, und geben Sie dann einen Prompt ein, der den Chat-Teilnehmer **@workspace** von GitHub Copilot verwendet, um eine Beschreibung des Projekts zu generieren.
+1. Öffnen Sie die Chatansicht, und geben Sie dann einen Prompt ein, der die Chatkomponente **@workspace** von GitHub Copilot verwendet, um eine Beschreibung des Projekts zu generieren.
 
     Geben Sie in der Chat-Ansicht beispielsweise den folgenden Prompt ein:
 
@@ -130,9 +130,9 @@ Führen Sie die folgenden Schritte aus, um diesen Abschnitt der Übung zu absolv
     @workspace describe this project
     ```
 
-    Verwenden Sie Chat-Teilnehmende, z. B. **@workspace**, um die von GitHub Copilot generierten Antworten zu verbessern. Chat-Teilnehmende funktionieren wie Domänen-Fachleute, die Ihnen in ihren speziellen Bereichen helfen können. Verwenden Sie **@workspace**, wenn GitHub Copilot die Struktur Ihres Projekts berücksichtigen soll, wie verschiedene Teile Ihres Codes interagieren oder Entwurfsmuster in Ihrem Projekt entwerfen soll.
+    Verwenden Sie Chatkomponenten, z. B. **@workspace**, um die von GitHub Copilot generierten Antworten zu verbessern. Chatkomponenten funktionieren wie Domänenfachleute, die Ihnen in ihren speziellen Bereichen helfen können. Verwenden Sie **@workspace**, wenn GitHub Copilot berücksichtigen soll, wie Ihr Projekt aufgebaut ist, wie verschiedene Teile Ihres Codes interagieren oder welche Entwurfsmuster in Ihrem Projekt vorhanden sind.
 
-    Wenn Sie eine Liste aller verfügbaren Chat-Teilnehmenden anzeigen möchten, geben Sie **@** in das Feld für Chat-Prompts ein.
+    Wenn Sie eine Liste aller verfügbaren Chatkomponenten anzeigen möchten, geben Sie **@** in das Feld für Chatprompts ein.
 
 1. Nehmen Sie sich eine Minute Zeit, um die Antwort von GitHub Copilot mit den tatsächlichen Projektdateien zu vergleichen.
 
@@ -159,7 +159,7 @@ Führen Sie die folgenden Schritte aus, um diesen Abschnitt der Übung zu absolv
     @workspace #usages How is the ConsoleApp class used?
     ```
 
-    Verwenden Sie Chat-Variablen, z. B. **#usages**, um bestimmten Kontext in Ihren Prompt einzuschließen. Wenn Sie eine Liste der Chat-Variablen anzeigen möchten, geben Sie **#** in das Feld für Chat-Prompts ein.
+    Verwenden Sie Chat-Variablen, z. B. **#usages**, um bestimmten Kontext in Ihren Prompt einzuschließen. Wenn Sie eine Liste der Chatvariablen anzeigen möchten, geben Sie **#** in das Feld für Chatprompts ein.
 
     > **HINWEIS:** GitHub Copilot berücksichtigt Ihren Chatverlauf und die Codedateien, die Sie in Visual Studio Code geöffnet haben, wenn Sie einen Kontext für Ihren Prompt erstellen und eine Antwort generieren.
 
@@ -177,7 +177,7 @@ Führen Sie die folgenden Schritte aus, um diesen Abschnitt der Übung zu absolv
     @workspace /explain Explain the Program.cs file
     ```
 
-    Verwenden Sie Slash-Befehle, z. B. **/explain**, um komplexe Prompts für häufige Szenarien zu vermeiden. Um eine Liste aller verfügbaren Slash-Befehle anzuzeigen, geben Sie **/** in das Feld für Chat-Prompts ein. Die verfügbaren Schrägstrichbefehle können je nach Chatumgebung und -kontext variieren.
+    Verwenden Sie Slash-Befehle, z. B. **/explain**, um komplexe Prompts für häufige Szenarien zu vermeiden. Um eine Liste aller verfügbaren Slashbefehle anzuzeigen, geben Sie **/** in das Feld für Chatprompts ein. Die verfügbaren Schrägstrichbefehle können je nach Chatumgebung und -kontext variieren.
 
 1. Nehmen Sie sich eine Minute Zeit, um die von GitHub Copilot generierte Detailantwort zu überprüfen.
 
@@ -197,11 +197,11 @@ Führen Sie die folgenden Schritte aus, um diesen Abschnitt der Übung zu absolv
 
 1. Fügen Sie die folgenden Dateien aus der PROJEKTMAPPEN-EXPLORER-Ansicht per Drag-and-Drop zum Chat-Kontext hinzu: **JsonData.cs**, **JsonLoanRepository.cs** und **JsonPatronRepository.cs**.
 
-    GitHub Copilot verwendet den Chat-Kontext, um die Codedateien zu verstehen, die für Ihren Prompt relevant sind. Sie können dem Chat-Kontext Dateien per Drag-and-Drop hinzufügen oder die Schaltfläche **Kontext anfügen** in der Chat-Ansicht verwenden.
+    GitHub Copilot verwendet den Chat-Kontext, um die Codedateien zu verstehen, die für Ihren Prompt relevant sind. Sie können dem Chatkontext per Drag & Drop oder über die Schaltfläche **Kontext anfügen** in der Chatansicht Dateien hinzufügen.
 
     Anstatt einzelne Dateien manuell hinzuzufügen, können Sie Copilot die richtigen Dateien automatisch in Ihrer Codebasis suchen lassen. Dies kann hilfreich sein, wenn Sie nicht wissen, welche Dateien für Ihre Frage relevant sind.
 
-    Damit Copilot die richtigen Dateien automatisch findet, fügen Sie ihrem Promp „#codebase“ hinzu, oder wählen Sie „Codebasis“ aus der Liste der Kontexttypen aus.
+    Damit Copilot die richtigen Dateien automatisch findet, fügen Sie ihrem Prompt „#codebase“ hinzu, oder wählen Sie „Codebasis“ aus der Liste der Kontexttypen aus.
 
 1. Geben Sie einen Prompt in der Chat-Ansicht ein, der eine Erklärung der Datenzugriffsklassen generiert.
 
@@ -279,7 +279,7 @@ Führen Sie die folgenden Schritte aus, um diesen Abschnitt der Übung zu absolv
 
 ## Erstellen der Projektdokumentation für die Infodatei
 
-Readme-Dateien bieten Projektmitwirkenden und Projektbeteiligten wichtige Informationen zu einem Code-Repository. Sie helfen Benutzenden, den Zweck des Projekts zu verstehen, wie es verwendet wird und wie sie etwas beitragen können. Eine gut strukturierte README-Datei kann die Benutzerfreundlichkeit und Verwendbarkeit eines Projekts erheblich verbessern.
+Readme-Dateien bieten Projektmitwirkenden und Projektbeteiligten wichtige Informationen zu einem Code-Repository. Sie helfen Benutzenden, den Zweck des Projekts zu verstehen, wie es verwendet wird und wie sie etwas beitragen können. Eine gut strukturierte README-Datei kann die Benutzerfreundlichkeit und Wartbarkeit eines Projekts erheblich verbessern.
 
 Sie benötigen eine README-Datei, die die folgenden Abschnitte enthält:
 
@@ -312,7 +312,7 @@ Führen Sie die folgenden Schritte aus, um diesen Abschnitt der Übung zu absolv
 
     Sie können Abschnitte einzeln aktualisieren, um detailliertere Informationen bereitzustellen oder wenn sie nicht ordnungsgemäß formatiert sind. Sie können auch die Antwort von GitHub Copilot in die Infodatei kopieren und dann direkt in der Markdowndatei Korrekturen vornehmen.
 
-1. Kopieren Sie die vorgeschlagene Dokumentation und fügen Sie sie dann in die README.md-Datei ein.
+1. Kopieren Sie die vorgeschlagene Dokumentation, und fügen Sie sie dann in die README.md-Datei ein.
 
     Um die gesamte Antwort zu kopieren, scrollen Sie nach unten in der Antwort, klicken Sie mit der rechten Maustaste auf den leeren Bereich rechts neben dem Symbol mit dem Daumen nach oben, und wählen Sie dann **Kopieren** aus.
 
@@ -328,4 +328,4 @@ In dieser Übung haben Sie gelernt, wie Sie GitHub Copilot zum Analysieren und D
 
 ## Bereinigen
 
-Nachdem Sie die Übung abgeschlossen haben, nehmen Sie sich eine Minute Zeit, um sicherzustellen, dass Sie keine Änderungen an Ihrem GitHub-Konto oder GitHub Copilot-Abonnement vorgenommen haben, die Sie nicht beibehalten möchten. Wenn Sie Änderungen vorgenommen haben, können Sie sie jetzt rückgängig machen.
+Nachdem Sie die Übung abgeschlossen haben, nehmen Sie sich eine Minute Zeit, um sicherzustellen, dass Sie keine Änderungen an Ihrem GitHub-Konto oder GitHub Copilot-Abonnement vorgenommen haben, die Sie nicht beibehalten möchten. Falls Sie Änderungen vorgenommen haben, machen Sie diese jetzt wieder rückgängig.

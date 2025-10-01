@@ -30,27 +30,13 @@ Bei Nutzung einer gehosteten Labumgebung für diese Übung:
 
 - Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, fügen Sie die folgende URL in die Navigationsleiste eines Browsers ein: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
 
-- Öffnen Sie eine Eingabeaufforderung, und führen Sie die folgenden Befehle aus:
+- So stellen Sie sicher, dass das .NET SDK für die Verwendung des offiziellen NuGet.org-Repositorys als Quelle zum Herunterladen und Wiederherstellen von Paketen konfiguriert ist:
 
-    Um sicherzustellen, dass Visual Studio Code für die Verwendung der richtigen Version von .NET konfiguriert ist, führen Sie den folgenden Befehl aus:
+    Öffnen Sie ein Befehlsterminal, und führen Sie den folgenden Befehl aus:
 
     ```bash
 
     dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
-
-    ```
-
-    Um sicherzustellen, dass Git für die Verwendung Ihres Namens und Ihrer E-Mail-Adresse konfiguriert ist, aktualisieren Sie die folgenden Befehle mit Ihren Informationen, und führen Sie dann die Befehle aus:
-
-    ```bash
-
-    git config --global user.name "John Doe"
-
-    ```
-
-    ```bash
-
-    git config --global user.email johndoe@example.com
 
     ```
 
@@ -70,7 +56,7 @@ Führen Sie die folgenden Schritte aus, um das Beispielprojekt herunterzuladen u
 
     1. Navigieren Sie zu dem Ordner "Downloads" in Ihrer Lab-Umgebung.
 
-    1. Klicken Sie mit der rechten Maustaste auf *GHCopilotEx7LabApps.zip*, und wählen Sie **dann "Alle**extrahieren" aus.
+    1. Klicken Sie mit der rechten Maustaste auf **GHCopilotEx7LabApps.zip**, und wählen Sie **dann "Alle**extrahieren" aus.
 
     1. Wählen Sie **Dateien nach Extrahierung anzeigen** und dann **Extrahieren** aus.
 
@@ -205,7 +191,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     What duplicate code exists between OrderProcessor.cs and ReturnProcessor.cs? Identify specific methods and logic that are duplicated between these classes. Describe opportunities to consolidate duplicate code.
     ```
 
-1. Nehmen Sie sich eine Minute Zeit, um die Vorschläge von GitHub Copilot zu überprüfen.
+1. Nehmen Sie sich eine Minute Zeit, um die Antwort von GitHub Copilot zu überprüfen.
 
     GitHub Copilot sollte die `Validate()` Methodenduplizierung und die ähnlichen Muster in `CalculateShipping()` Methoden identifizieren. Es kann auch ähnliche Muster in Bezug auf die Protokollierung, Fehlerbehandlung und Zahlungs-/Erstattungsverarbeitung beachten.
 
@@ -221,7 +207,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     Analyze the EmailService class. What duplicate logic exists within this service for handling order confirmations versus return confirmations? Describe opportunities to consolidate duplicate code.
     ```
 
-1. Nehmen Sie sich eine Minute Zeit, um die Vorschläge von GitHub Copilot zu überprüfen.
+1. Nehmen Sie sich eine Minute Zeit, um die Antwort von GitHub Copilot zu überprüfen.
 
     GitHub Copilot sollte die doppelte Logik für die Verarbeitung von Bestellbestätigungen und Rückgabebestätigungen identifizieren. Dies umfasst einen vorlagenbasierten Ansatz zum Vorbereiten und Senden von E-Mails. GitHub Copilot kann auch doppelte Muster im Zusammenhang mit Hilfsmethoden und Konsolenausgabe identifizieren.
 
@@ -237,7 +223,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     Analyze the AuditService and InventoryService classes. Identify the methods that contain duplicate logic patterns that could be consolidated. Describe opportunities to consolidate duplicate code.
     ```
 
-1. Nehmen Sie sich eine Minute Zeit, um die Vorschläge von GitHub Copilot zu überprüfen.
+1. Nehmen Sie sich eine Minute Zeit, um die Antwort von GitHub Copilot zu überprüfen.
 
     GitHub Copilot sollte Muster wie die Erstellung/Validierung/Speicherung von Überwachungseinträgen in AuditService und die Bestandsüberprüfung/Aktualisierung/Protokollierung in InventoryService identifizieren. GitHub Copilot kann auch doppelte Muster im Zusammenhang mit Hilfsmethoden identifizieren.
 
@@ -253,7 +239,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
     > **HINWEIS:** Die `@workspace` Schlüsselwörter `#codebase` weisen GitHub Copilot an, die gesamte Codebasis im Kontext der Analyse einzuschließen. Das `@workspace` Schlüsselwort ist nur verfügbar, wenn GitHub Copilot im Ask-Modus verwendet wird. Das `#codebase` Schlüsselwort kann in jedem Modus verwendet werden (Fragen, Bearbeiten oder Agent).
 
-1. Nehmen Sie sich eine Minute Zeit, um die Vorschläge von GitHub Copilot zu überprüfen.
+1. Nehmen Sie sich eine Minute Zeit, um die Antwort von GitHub Copilot zu überprüfen.
 
     Die Antwort sollte eine umfassende Analyse aller Duplizierungsmuster bereitstellen und einen Ansatz für die Konsolidierung von doppeltem Code vorschlagen. In einem Produktionsszenario sollten Sie jeden Abschnitt der Antwort analysieren und die Verwendung von Nachverfolgungsaufforderungen in Betracht ziehen, um tiefer in bestimmte Bereiche einzutauchen.
 
@@ -431,7 +417,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
     Die ursprüngliche Ausgabe, **EXPECTED_OUTPUT.md**, ist im Ordner ECommerceOrderAnd Return enthalten.
 
-    Sie können eine zweite Ausgabedatei erstellen und GitHub Copilot bitten, alle Unterschiede zwischen den beiden Dateien zu identifizieren.
+    Sie können eine zweite Ausgabedatei erstellen und GitHub Copilot bitten, alle Unterschiede zwischen den beiden Dateien zu ermitteln.
 
     Die Ausgabe sollte identisch sein und bestätigt, dass die Geschäftslogik unverändert bleibt, während die doppelte Codelogik konsolidiert wird.
 

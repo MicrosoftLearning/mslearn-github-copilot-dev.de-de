@@ -12,45 +12,31 @@ In dieser Übung verwenden Sie GitHub Copilot, um Code mit tief verschachtelter 
 
 Diese Übung dauert ca. **30** Minuten.
 
-> **WICHTIG:** Um diese Übung abzuschließen, müssen Sie ein eigenes GitHub-Konto und ein eigenes GitHub Copilot-Abonnement bereitstellen. Wenn Sie kein GitHub-Konto haben, können Sie sich für ein kostenloses eigenes Konto <a href="https://github.com/" target="_blank">registrieren</a> und einen GitHub Copilot Free-Plan verwenden, um die Übung abzuschließen. Wenn Sie Zugriff auf ein GitHub Copilot Pro-, GitHub Copilot Pro+-, GitHub Copilot Business- oder GitHub Copilot Enterprise-Abonnement in Ihrer Übungsumgebung haben, können Sie Ihr vorhandenes GitHub Copilot-Abonnement verwenden, um diese Übung abzuschließen.
+> **WICHTIG:** Um diese Übung abzuschließen, müssen Sie Ihr eigenes GitHub-Konto und GitHub Copilot-Abonnement bereitstellen. Wenn Sie kein GitHub-Konto haben, können Sie sich für ein kostenloses eigenes Konto <a href="https://github.com/" target="_blank">registrieren</a> und einen GitHub Copilot Free-Plan verwenden, um die Übung abzuschließen. Wenn Sie Zugriff auf ein GitHub Copilot Pro-, GitHub Copilot Pro+-, GitHub Copilot Business- oder GitHub Copilot Enterprise-Abonnement in Ihrer Labumgebung haben, können Sie Ihr vorhandenes GitHub Copilot-Abonnement für diese Übung verwenden.
 
 ## Vor der Installation
 
-Ihre Übungsumgebung muss Folgendes enthalten: Git 2.48 oder höher, .NET SDK 9.0 oder höher, Visual Studio Code mit der C#Dev Kit-Erweiterung und Zugriff auf ein GitHub-Konto mit aktiviertem GitHub Copilot.
+Ihre Labumgebung muss Folgendes enthalten: Git 2.48 oder höher, .NET SDK 9.0 oder höher, Visual Studio Code mit der C#Dev Kit-Erweiterung und Zugriff auf ein GitHub-Konto mit aktiviertem GitHub Copilot.
 
 ### Konfigurieren der Laborumgebung
 
-Wenn Sie einen lokalen PC als Übungsumgebung für diese Übung verwenden, gilt Folgendes:
+Bei Nutzung eines lokalen PCs als Labumgebung für diese Übung:
 
-- Um Hilfe beim Konfigurieren Ihres lokalen PCs als Übungsumgebung zu erhalten, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Konfigurieren Sie die Ressourcen Ihrer Übungsumgebung</a>.
+- Wenn Sie Hilfe beim Konfigurieren Ihres lokalen PCs als Labumgebung benötigen, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Konfigurieren Ihrer Labumgebungsressourcen</a>.
 
-- Um Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code zu erhalten, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren Sie GitHub Copilot in Visual Studio Code</a>.
+- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
 
-Wenn Sie eine gehostete Übungsumgebung für diese Übung verwenden, gilt Folgendes:
+Bei Nutzung einer gehosteten Labumgebung für diese Übung:
 
-- Um Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code zu erhalten, fügen Sie die folgende URL in die Seitennavigationsleiste eines Browsers ein: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren Sie GitHub Copilot in Visual Studio Code</a>.
+- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, fügen Sie die folgende URL in die Navigationsleiste eines Browsers ein: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
 
-- Öffnen Sie eine Eingabeaufforderung, und führen Sie die folgenden Befehle aus:
+- So stellen Sie sicher, dass das .NET SDK für die Verwendung des offiziellen NuGet.org-Repositorys als Quelle zum Herunterladen und Wiederherstellen von Paketen konfiguriert ist:
 
-    Um sicherzustellen, dass Visual Studio Code für die Verwendung der richtigen Version von .NET konfiguriert ist, führen Sie den folgenden Befehl aus:
+    Öffnen Sie ein Befehlsterminal, und führen Sie den folgenden Befehl aus:
 
     ```bash
 
     dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
-
-    ```
-
-    Um sicherzustellen, dass Git für die Verwendung Ihres Namens und Ihrer E-Mail-Adresse konfiguriert ist, aktualisieren Sie die folgenden Befehle mit Ihren Informationen und führen Sie sie dann aus:
-
-    ```bash
-
-    git config --global user.name "John Doe"
-
-    ```
-
-    ```bash
-
-    git config --global user.email johndoe@example.com
 
     ```
 
@@ -70,7 +56,7 @@ Führen Sie die folgenden Schritte aus, um die Beispielprojekte herunterzuladen 
 
     1. Navigieren Sie zu dem Ordner mit Downloads in Ihrer Übungsumgebung.
 
-    1. Klicken Sie mit der rechten Maustaste auf *GHCopilotEx9LabApps.zip* und wählen Sie dann **Alle extrahieren** aus.
+    1. Klicken Sie mit der rechten Maustaste auf **GHCopilotEx9LabApps.zip** und wählen Sie dann **Alle extrahieren** aus.
 
     1. Wählen Sie **Dateien nach Extrahierung anzeigen** und dann **Extrahieren** aus.
 
@@ -80,7 +66,7 @@ Führen Sie die folgenden Schritte aus, um die Beispielprojekte herunterzuladen 
 
     Zum Beispiel:
 
-    1. Öffnen Sie Visual Studio Code in Ihrer Übungsumgebung.
+    1. Öffnen Sie Visual Studio Code in Ihrer Lab-Umgebung.
 
     1. Wählen Sie in Visual Studio Code im Menü **Datei** die Option **Ordner öffnen** aus.
 
@@ -388,7 +374,7 @@ In diesem Abschnitt der Übung verwenden Sie GitHub Copilot-Agent, um die Klasse
 
 Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
-1. Stellen Sie sicher, dass die Chat-Ansicht von GitHub Copilot in Visual Studio Code geöffnet ist.
+1. Stellen Sie sicher, dass die GitHub Copilot-Chatansicht in Visual Studio Code geöffnet ist.
 
 1. Wählen Sie in der Chat-Ansicht den **Agent-Modus** aus.
 
@@ -586,4 +572,4 @@ In dieser Übung haben Sie gelernt, wie Sie GitHub Copilot verwenden, um komplex
 
 ## Bereinigen
 
-Nachdem Sie die Übung abgeschlossen haben, nehmen Sie sich eine Minute Zeit, um sicherzustellen, dass Sie keine Änderungen an Ihrem GitHub-Konto oder GitHub Copilot-Abonnement vorgenommen haben, die Sie nicht beibehalten möchten. Falls Sie Änderungen vorgenommen haben, setzen Sie diese nach Bedarf zurück. Wenn Sie einen lokalen PC als Übungsumgebung verwenden, können Sie den Ordner der Beispielprojekte, den Sie für diese Übung erstellt haben, archivieren oder löschen.
+Nachdem Sie die Übung abgeschlossen haben, nehmen Sie sich eine Minute Zeit, um sicherzustellen, dass Sie keine Änderungen an Ihrem GitHub-Konto oder GitHub Copilot-Abonnement vorgenommen haben, das Sie nicht beibehalten möchten. Wenn Sie Änderungen vorgenommen haben, setzen Sie sie nach Bedarf zurück. Wenn Sie einen lokalen PC als Lab-Umgebung verwenden, können Sie den Beispielprojektordner archivieren oder löschen, den Sie für diese Übung erstellt haben.

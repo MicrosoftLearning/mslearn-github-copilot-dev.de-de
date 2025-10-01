@@ -10,7 +10,7 @@ Die Funktion zur Code-Vervollständigung und zu interaktivem Chat von GitHub Cop
 
 Diese Übung dauert ca. **30** Minuten.
 
-> **WICHTIG:** Um diese Übung abzuschließen, benötigen Sie ein eigenes GitHub-Konto und ein GitHub Copilot-Abonnement. Falls Sie kein GitHub-Konto haben, können Sie sich für ein kostenloses Einzelkonto <a href="https://github.com/" target="_blank">registrieren</a> und den GitHub Copilot Free-Plan verwenden, um die Übung abzuschließen. Wenn Sie in Ihrer Übungsumgebung Zugriff auf ein GitHub Copilot Pro-, GitHub Copilot Pro+-, GitHub Copilot Business- oder GitHub Copilot Enterprise-Abonnement haben, können Sie Ihr vorhandenes GitHub Copilot-Abonnement für diese Übung verwenden.
+> **WICHTIG:** Um diese Übung abzuschließen, benötigen Sie ein eigenes GitHub-Konto und ein GitHub Copilot-Abonnement. Falls Sie kein GitHub-Konto haben, können Sie sich für ein kostenloses Einzelkonto <a href="https://github.com/" target="_blank">registrieren</a> und den GitHub Copilot Free-Plan verwenden, um die Übung abzuschließen. Wenn Sie Zugriff auf ein GitHub Copilot Pro-, GitHub Copilot Pro+-, GitHub Copilot Business- oder GitHub Copilot Enterprise-Abonnement in Ihrer Labumgebung haben, können Sie Ihr vorhandenes GitHub Copilot-Abonnement für diese Übung verwenden.
 
 ## Vor der Installation
 
@@ -18,17 +18,17 @@ Ihre Übungsumgebung muss die folgenden Voraussetzungen erfüllen: Git 2.48 ode
 
 Wenn Sie einen lokalen PC als Übungsumgebung für diese Übung verwenden, gilt Folgendes:
 
-- Wenn Sie Hilfe beim Konfigurieren Ihres lokalen PCs als Übungsumgebung benötigen, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Konfigurieren Sie Ihre Ressourcen für die Übungsumgebung</a>.
+- Wenn Sie Hilfe beim Konfigurieren Ihres lokalen PCs als Labumgebung benötigen, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Konfigurieren der Ressourcen für Ihre Labumgebung</a>.
 
 - Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
 
-Wenn Sie eine gehostete Übungsumgebung für diese Übung verwenden, gilt Folgendes:
+Wenn Sie eine gehostete Labumgebung für diese Übung verwenden, gilt Folgendes:
 
-- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, öffnen einen Browser und fügen Sie die folgende URL in die Navigationsleiste ein: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
+- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, fügen Sie den folgenden Link in die Navigationsleiste eines Browsers ein: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
 
-- Öffnen Sie die Eingabeaufforderung und führen Sie dann die folgenden Befehle aus:
+- So stellen Sie sicher, dass das .NET SDK für die Verwendung des offiziellen NuGet.org-Repositorys als Quelle zum Herunterladen und Wiederherstellen von Paketen konfiguriert ist:
 
-    Um sicherzustellen, dass Visual Studio Code für die Verwendung der richtigen Version von .NET konfiguriert ist, führen Sie den folgenden Befehl aus:
+    Öffnen Sie ein Befehlsterminal, und führen Sie den folgenden Befehl aus:
 
     ```bash
 
@@ -36,7 +36,9 @@ Wenn Sie eine gehostete Übungsumgebung für diese Übung verwenden, gilt Folgen
 
     ```
 
-    Um sicherzustellen, dass Git für die Verwendung Ihres Namens und Ihrer E-Mail-Adresse konfiguriert ist, aktualisieren Sie die folgenden Befehle mit Ihren Informationen und führen Sie sie dann aus:
+- So stellen Sie sicher, dass Git für die Verwendung Ihres Namens und Ihrer E-Mail-Adresse konfiguriert ist:
+
+    Aktualisieren Sie die folgenden Befehle mit Ihren Informationen, und führen Sie dann die Befehle aus:
 
     ```bash
 
@@ -52,7 +54,7 @@ Wenn Sie eine gehostete Übungsumgebung für diese Übung verwenden, gilt Folgen
 
 ## Übungsszenario
 
-Sie sind Entwicklerin bzw. Entwickler und arbeiten in der IT-Abteilung Ihrer lokalen Community. Die Back-End-Systeme, die die öffentliche Bibliothek unterstützen, wurden bei einem Brand zerstört. Ihr Team muss eine temporäre Lösung entwickeln, damit die Mitarbeitenden der Bibliothek ihre Vorgänge verwalten können, bis das System ersetzt werden kann. Ihr Team hat GitHub Copilot ausgewählt, um den Entwicklungsprozess zu beschleunigen.
+Sie arbeiten in der Programmierung, und zwar bei der IT-Abteilung Ihrer Gemeinde. Die Back-End-Systeme, die die öffentliche Bibliothek unterstützen, wurden bei einem Brand zerstört. Ihr Team muss eine temporäre Lösung entwickeln, damit die Mitarbeitenden der Bibliothek ihre Vorgänge verwalten können, bis das System ersetzt werden kann. Ihr Team hat GitHub Copilot ausgewählt, um den Entwicklungsprozess zu beschleunigen.
 
 Eine erste Version Ihrer Bibliotheksanwendung wurde von Endbenutzenden getestet und es werden mehrere zusätzliche Funktionen angefordert. Ihr Team hat sich damit einverstanden erklärt, an den folgenden Funktionen zu arbeiten:
 
@@ -107,11 +109,11 @@ Gehen Sie folgendermaßen vor, um die Bibliotheksanwendung einzurichten:
 
     Zum Beispiel:
 
-    1. Öffnen Sie Visual Studio Code in Ihrer Übungsumgebung.
+    1. Öffnen Sie Visual Studio Code in Ihrer Labumgebung.
 
     1. Wählen Sie in Visual Studio Code im Menü **Datei** die Option **Ordner öffnen** aus.
 
-    1. Navigieren Sie zum Windows-Desktop-Ordner und wählen Sie **AccelerateDevGHCopilot** und dann **Ordner auswählen** aus.
+    1. Navigieren Sie zum Windows-Ordner „Desktop“ und wählen Sie **AccelerateDevGHCopilot** und dann **Ordner auswählen** aus.
 
 1. Überprüfen Sie in der Visual Studio Code-Ansicht „PROJEKTMAPPEN-EXPLORER“ die folgende Projektmappenstruktur:
 
@@ -125,7 +127,7 @@ Gehen Sie folgendermaßen vor, um die Bibliotheksanwendung einzurichten:
 
 1. Stellen Sie sicher, dass die Lösung erfolgreich erstellt wird.
 
-    Um beispielsweise die Projektmappe in der PROJEKTMAPPEN-EXPLORER-Ansicht zu erstellen, klicken Sie mit der rechten Maustaste auf **AccelerateDevGHCopilot** und wählen Sie anschließend **Erstellen** aus.
+    Um beispielsweise die Lösung in der PROJEKTMAPPEN-EXPLORER-Ansicht zu erstellen, klicken Sie mit der rechten Maustaste auf **AccelerateDevGHCopilot** und wählen Sie anschließend **Erstellen** aus.
 
     Es werden einige Warnungen angezeigt, es sollten aber keine Fehler auftreten.
 
@@ -753,7 +755,7 @@ Führen Sie die folgenden Schritte aus, um diesen Abschnitt der Übung zu absolv
 
 ## Mergen Ihrer Updates zur Buchverfügbarkeit in den Mainbranch des Repositorys
 
-Es ist wichtig, den Code vor dem Mergen in den Hauptzweig des Repositorys zu testen. Durch Tests wird sichergestellt, dass Ihr Code erwartungsgemäß funktioniert und keine neuen Probleme mit sich bringt. In dieser Übung verwenden Sie manuelle Tests, um zu überprüfen, ob die Funktion „Buchverfügbarkeit“ wie erwartet funktioniert.
+Es ist wichtig, den Code vor dem Mergen in den Hauptzweig des Repositorys zu testen. Durch Tests wird sichergestellt, dass Ihr Code erwartungsgemäß funktioniert und keine neuen Probleme mit sich bringt. In dieser Übung verwenden Sie manuelle Tests, um zu überprüfen, ob die Funktion zur Buchverfügbarkeit wie erwartet funktioniert.
 
 In diesem Abschnitt der Übung werden folgende Aufgaben ausgeführt:
 
@@ -889,9 +891,9 @@ Führen Sie die folgenden Schritte aus, um diesen Abschnitt der Übung zu absolv
 
 1. Klicken Sie auf **Pull Request erstellen**.
 
-1. Wenn alle Prüfungen ohne Konflikte mit der Basisverzweigung beendet wurden, wählen Sie **Pull Request zusammenführen** und wählen dann **Zusammenführen bestätigen** aus.
+1. Wenn alle Prüfungen ohne Konflikte mit dem Basis-Branch beendet wurden, wählen Sie **Pull Request mergen** und wählen dann **Merge bestätigen** aus.
 
-    Beachten Sie, dass Sie den Zweig **Buchverfügbarkeit** löschen können, nachdem Sie die Änderungen zusammengeführt haben. Zum Löschen des Branches wählen Sie **Branch löschen** aus.
+    Beachten Sie, dass Sie den Branch **book-availability** löschen können, nachdem Sie die Änderungen zusammengeführt haben. Zum Löschen des Branches wählen Sie **Branch löschen** aus.
 
 1. Wechseln Sie zurück zum Visual Studio Code-Fenster.
 

@@ -10,7 +10,7 @@ Visual Studio Code bietet Entwicklern eine nahtlose und anpassbare GitHub Copilo
 
 Diese Übung dauert ca. **25** Minuten.
 
-> **WICHTIG:** Um diese Übung abzuschließen, müssen Sie ein eigenes GitHub-Konto und ein eigenes GitHub Copilot-Abonnement bereitstellen. Wenn Sie kein GitHub-Konto haben, können Sie sich für ein kostenloses eigenes Konto <a href="https://github.com/" target="_blank">registrieren</a> und einen GitHub Copilot Free-Plan verwenden, um die Übung abzuschließen. Wenn Sie Zugriff auf ein GitHub Copilot Pro-, GitHub Copilot Pro+-, GitHub Copilot Business- oder GitHub Copilot Enterprise-Abonnement in Ihrer Labumgebung haben, können Sie Ihr vorhandenes GitHub Copilot-Abonnement verwenden, um diese Übung abzuschließen.
+> **WICHTIG:** Um diese Übung abzuschließen, benötigen Sie ein eigenes GitHub-Konto und ein GitHub Copilot-Abonnement. Falls Sie kein GitHub-Konto haben, können Sie sich für ein kostenloses Einzelkonto <a href="https://github.com/" target="_blank">registrieren</a> und den GitHub Copilot Free-Plan verwenden, um die Übung abzuschließen. Wenn Sie Zugriff auf ein GitHub Copilot Pro-, GitHub Copilot Pro+-, GitHub Copilot Business- oder GitHub Copilot Enterprise-Abonnement in Ihrer Labumgebung haben, können Sie Ihr vorhandenes GitHub Copilot-Abonnement für diese Übung verwenden.
 
 ## Vor der Installation
 
@@ -19,42 +19,46 @@ Ihre Labumgebung muss Folgendes enthalten:
 - Git 2.48 oder höher
 - .NET oder Python:
 
-    -  **.NET SDK 9.0** oder höher mit Visual Studio Code mit der Erweiterung **C# Dev Kit**
+    - **.NET SDK 9.0** oder höher mit Visual Studio Code mit der Erweiterung **C# Dev Kit**
     - **Python 3.10** oder höher mit Visual Studio Code mit der Erweiterung **Python**
 
 - Zugriff auf ein GitHub-Konto mit aktiviertem GitHub Copilot
 
 Wenn Sie einen lokalen PC als Labumgebung für diese Übung verwenden, gilt Folgendes:
 
-- Um Hilfe beim Konfigurieren Ihres lokalen PCs als Labumgebung zu erhalten, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Konfigurieren der Ressourcen für die Labumgebung</a>.
+- Wenn Sie Hilfe beim Konfigurieren Ihres lokalen PCs als Labumgebung benötigen, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Konfigurieren der Ressourcen für Ihre Labumgebung</a>.
 
-- Um Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code zu erhalten, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
+- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
 
 Wenn Sie eine gehostete Labumgebung für diese Übung verwenden, gilt Folgendes:
 
-- Um Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code zu erhalten, fügen Sie die folgende URL in die Seitennavigationsleiste eines Browsers ein: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
+- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, fügen Sie den folgenden Link in die Navigationsleiste eines Browsers ein: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
 
-- Öffnen Sie ein Befehlsterminal, und führen Sie die folgenden Befehle aus:
+- So stellen Sie sicher, dass das .NET SDK für die Verwendung des offiziellen NuGet.org-Repositorys als Quelle zum Herunterladen und Wiederherstellen von Paketen konfiguriert ist:
 
-    Um sicherzustellen, dass Visual Studio Code für die Verwendung der richtigen Version von **.NET** konfiguriert ist, führen Sie den folgenden Befehl aus:
+    Öffnen Sie ein Befehlsterminal, und führen Sie den folgenden Befehl aus:
 
     ```bash
 
     dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
 
     ```
-    
-    oder
 
-    Um sicherzustellen, dass Visual Studio Code für die Verwendung der richtigen Version von Python konfiguriert ist, stellen Sie sicher, dass die Python-Version 3.10 oder höher installiert ist:
+- Führen Sie die folgenden Schritte aus, um die gehostete Labumgebung für Python zu konfigurieren:
 
-    ```bash
-    python --version
-    ```
+    1. Führen Sie den folgenden Befehl aus, um die Version von Python zu ermitteln, die in der gehosteten Umgebung installiert ist:
+
+        ```bash
+        python --version
+        ```
+
+        Führen Sie bei Bedarf die Schritte unter der folgenden URL aus, um Python in Visual Studio Code zu konfigurieren: <a href="https://code.visualstudio.com/docs/python/python-tutorial" target="_blank">Erste Schritte mit Python in VS Code</a>
+
+    1. Installieren Sie die Python-Erweiterung über die Ansicht „Erweiterungen“ in Visual Studio Code.
 
 ## Übungsszenario
 
-Sie sind Entwickler und arbeiten in der IT-Abteilung Ihrer Gemeinde. Die Back-End-Systeme, die die öffentliche Bibliothek unterstützen, wurden bei einem Brand zerstört. Ihr Team muss eine temporäre Lösung entwickeln, damit die Mitarbeitenden der Bibliothek ihre Vorgänge verwalten können, bis das System ersetzt werden kann. Ihr Team hat GitHub Copilot ausgewählt, um den Entwicklungsprozess zu beschleunigen.
+Sie arbeiten in der Programmierung, und zwar bei der IT-Abteilung Ihrer Gemeinde. Die Back-End-Systeme, die die öffentliche Bibliothek unterstützen, wurden bei einem Brand zerstört. Ihr Team muss eine temporäre Lösung entwickeln, damit die Mitarbeitenden der Bibliothek ihre Vorgänge verwalten können, bis das System ersetzt werden kann. Ihr Team hat GitHub Copilot ausgewählt, um den Entwicklungsprozess zu beschleunigen.
 
 Diese Übung umfasst die folgenden Aufgaben:
 
@@ -205,7 +209,7 @@ Führen Sie die folgenden Schritte aus, um diesen Abschnitt der Übung zu absolv
 
     - Menü „Chatmodus“: Das Dropdownmenü „Chatmodus“ befindet sich rechts neben der Schaltfläche „Sprach-Chat starten“. Je nach Anforderungen können Sie zwischen verschiedenen Chatmodi wählen:
 
-        - **Fragen**: Verwenden Sie diesen Modus, um GitHub Copilot Fragen zu Ihrer Codebasis zu stellen. Sie können GitHub Copilot bitten, Code zu erklären, Änderungen vorzuschlagen oder Informationen zur Codebasis bereitzustellen.
+        - **Fragen**: Verwenden Sie diesen Modus, um GitHub Copilot Fragen zu Ihrer Codebasis zu stellen. Sie können GitHub Copilot auffordern, Code zu erklären, Änderungen vorzuschlagen oder Informationen zur Codebasis bereitzustellen.
         - **Bearbeiten**: Verwenden Sie diesen Modus, um Code in Ihrem Arbeitsbereich zu bearbeiten. Sie können GitHub Copilot verwenden, um Code umzugestalten, Kommentare hinzuzufügen oder andere Änderungen an Ihrem Code vorzunehmen.
         - **Agent**: Verwenden Sie diesen Modus, um GitHub Copilot als Agent auszuführen. Sie können GitHub Copilot verwenden, um Befehle auszuführen, Code auszuführen oder andere Aufgaben in Ihrem Arbeitsbereich auszuführen.
 
@@ -480,4 +484,4 @@ In dieser Übung haben Sie GitHub Copilot-Einstellungen untersucht und die GitHu
 
 ## Bereinigen
 
-Nachdem Sie die Übung abgeschlossen haben, nehmen Sie sich kurz Zeit, um sicherzustellen, dass Sie keine Änderungen an Ihrem GitHub-Konto oder GitHub Copilot-Abonnement vorgenommen haben, die Sie nicht beibehalten möchten. Wenn Sie Änderungen vorgenommen haben, können Sie sie jetzt rückgängig machen.
+Nachdem Sie die Übung abgeschlossen haben, nehmen Sie sich kurz Zeit, um sicherzustellen, dass Sie keine Änderungen an Ihrem GitHub-Konto oder GitHub Copilot-Abonnement vorgenommen haben, die Sie nicht beibehalten möchten. Falls Sie Änderungen vorgenommen haben, machen Sie diese jetzt wieder rückgängig.

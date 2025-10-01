@@ -10,7 +10,7 @@ Mit GitHub Copilot können Sie Ihre gesamte Codebasis auswerten und Aktualisieru
 
 Diese Übung dauert ca. **30** Minuten.
 
-> **WICHTIG:** Um diese Übung abzuschließen, benötigen Sie ein eigenes GitHub-Konto und ein GitHub Copilot-Abonnement. Falls Sie kein GitHub-Konto haben, können Sie sich für ein kostenloses Einzelkonto <a href="https://github.com/" target="_blank">registrieren</a> und den GitHub Copilot Free-Plan verwenden, um die Übung abzuschließen. Wenn Sie in Ihrer Übungsumgebung Zugriff auf ein GitHub Copilot Pro-, GitHub Copilot Pro+-, GitHub Copilot Business- oder GitHub Copilot Enterprise-Abonnement haben, können Sie Ihr vorhandenes GitHub Copilot-Abonnement für diese Übung verwenden.
+> **WICHTIG:** Um diese Übung abzuschließen, benötigen Sie ein eigenes GitHub-Konto und ein GitHub Copilot-Abonnement. Falls Sie kein GitHub-Konto haben, können Sie sich für ein kostenloses Einzelkonto <a href="https://github.com/" target="_blank">registrieren</a> und den GitHub Copilot Free-Plan verwenden, um die Übung abzuschließen. Wenn Sie Zugriff auf ein GitHub Copilot Pro-, GitHub Copilot Pro+-, GitHub Copilot Business- oder GitHub Copilot Enterprise-Abonnement in Ihrer Labumgebung haben, können Sie Ihr vorhandenes GitHub Copilot-Abonnement für diese Übung verwenden.
 
 ## Vor der Installation
 
@@ -18,17 +18,17 @@ Ihre Übungsumgebung muss die folgenden Voraussetzungen erfüllen: Git 2.48 ode
 
 Wenn Sie einen lokalen PC als Übungsumgebung für diese Übung verwenden, gilt Folgendes:
 
-- Wenn Sie Hilfe beim Konfigurieren Ihres lokalen PCs als Übungsumgebung benötigen, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Konfigurieren Sie Ihre Ressourcen für die Übungsumgebung</a>.
+- Wenn Sie Hilfe beim Konfigurieren Ihres lokalen PCs als Labumgebung benötigen, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Konfigurieren der Ressourcen für Ihre Labumgebung</a>.
 
 - Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
 
-Wenn Sie eine gehostete Übungsumgebung für diese Übung verwenden, gilt Folgendes:
+Wenn Sie eine gehostete Labumgebung für diese Übung verwenden, gilt Folgendes:
 
-- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, öffnen einen Browser und fügen Sie die folgende URL in die Navigationsleiste ein: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
+- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, fügen Sie den folgenden Link in die Navigationsleiste eines Browsers ein: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
 
-- Öffnen Sie die Eingabeaufforderung und führen Sie dann die folgenden Befehle aus:
+- So stellen Sie sicher, dass das .NET SDK für die Verwendung des offiziellen NuGet.org-Repositorys als Quelle zum Herunterladen und Wiederherstellen von Paketen konfiguriert ist:
 
-    Um sicherzustellen, dass Visual Studio Code für die Verwendung der richtigen Version von .NET konfiguriert ist, führen Sie den folgenden Befehl aus:
+    Öffnen Sie ein Befehlsterminal, und führen Sie den folgenden Befehl aus:
 
     ```bash
 
@@ -38,7 +38,7 @@ Wenn Sie eine gehostete Übungsumgebung für diese Übung verwenden, gilt Folgen
 
 ## Übungsszenario
 
-Sie sind Entwicklerin bzw. Entwickler und arbeiten in der IT-Abteilung Ihrer lokalen Community. Die Back-End-Systeme, die die öffentliche Bibliothek unterstützen, wurden bei einem Brand zerstört. Ihr Team muss eine temporäre Lösung entwickeln, damit die Mitarbeitenden der Bibliothek ihre Vorgänge verwalten können, bis das System ersetzt werden kann. Ihr Team hat GitHub Copilot ausgewählt, um den Entwicklungsprozess zu beschleunigen.
+Sie arbeiten in der Programmierung, und zwar bei der IT-Abteilung Ihrer Gemeinde. Die Back-End-Systeme, die die öffentliche Bibliothek unterstützen, wurden bei einem Brand zerstört. Ihr Team muss eine temporäre Lösung entwickeln, damit die Mitarbeitenden der Bibliothek ihre Vorgänge verwalten können, bis das System ersetzt werden kann. Ihr Team hat GitHub Copilot ausgewählt, um den Entwicklungsprozess zu beschleunigen.
 
 Sie haben eine erste Version der Bibliotheksanwendung zur Überprüfung abgegeben. Das Überprüfungsteam hat Möglichkeiten zur Verbesserung der Codequalität, Leistung, Lesbarkeit, Wartung und Sicherheit identifiziert.
 
@@ -57,7 +57,7 @@ Ihnen werden die folgenden Updates zugewiesen:
 Diese Übung umfasst die folgenden Aufgaben:
 
 1. Richten Sie die Bibliotheksanwendung in Visual Studio Code ein.
-1. Analysieren Sie Code in der Chat-Ansicht und gestalten Sie ihn in den Modi „Fragen“ und „Bearbeiten“ um.
+1. Analysieren Sie Code in der Chatansicht und gestalten Sie ihn in den Modi „Fragen“ und „Bearbeiten“ um.
 1. Gestalten Sie Code mithilfe von Inline-Chat und der Chat-Ansicht in den Modi „Bearbeiten“ und „Agent“ um.
 
 ## Einrichten der Bibliotheksanwendung in Visual Studio Code
@@ -88,11 +88,11 @@ Gehen Sie folgendermaßen vor, um die Bibliotheksanwendung einzurichten:
 
     Zum Beispiel:
 
-    1. Öffnen Sie Visual Studio Code in Ihrer Übungsumgebung.
+    1. Öffnen Sie Visual Studio Code in Ihrer Labumgebung.
 
     1. Wählen Sie in Visual Studio Code im Menü **Datei** die Option **Ordner öffnen** aus.
 
-    1. Navigieren Sie zum Windows-Desktop-Ordner und wählen Sie **AccelerateDevGHCopilot** und dann **Ordner auswählen** aus.
+    1. Navigieren Sie zum Windows-Ordner „Desktop“ und wählen Sie **AccelerateDevGHCopilot** und dann **Ordner auswählen** aus.
 
 1. Überprüfen Sie in der Visual Studio Code-Ansicht „PROJEKTMAPPEN-EXPLORER“ die folgende Projektmappenstruktur:
 
@@ -106,7 +106,7 @@ Gehen Sie folgendermaßen vor, um die Bibliotheksanwendung einzurichten:
 
 1. Stellen Sie sicher, dass die Lösung erfolgreich erstellt wird.
 
-    Um beispielsweise die Projektmappe in der PROJEKTMAPPEN-EXPLORER-Ansicht zu erstellen, klicken Sie mit der rechten Maustaste auf **AccelerateDevGHCopilot** und wählen Sie anschließend **Erstellen** aus.
+    Um beispielsweise die Lösung in der PROJEKTMAPPEN-EXPLORER-Ansicht zu erstellen, klicken Sie mit der rechten Maustaste auf **AccelerateDevGHCopilot** und wählen Sie anschließend **Erstellen** aus.
 
     Es werden einige Warnungen angezeigt, es sollten aber keine Fehler auftreten.
 
@@ -123,7 +123,7 @@ Sie müssen folgende Schritte durchführen:
 
 Die Chat-Ansicht von GitHub Copilot verfügt über drei Modi: **Fragen**, **Bearbeiten** und **Agent**. Jeder Modus wurde für verschiedene Arten von Interaktionen mit GitHub Copilot entwickelt.
 
-- **Fragen**: Verwenden Sie diesen Modus, um GitHub Copilot Fragen zu Ihrer Codebasis zu stellen. Sie können GitHub Copilot bitten, Code zu erklären, Änderungen vorzuschlagen oder Informationen zur Codebasis bereitzustellen.
+- **Fragen**: Verwenden Sie diesen Modus, um GitHub Copilot Fragen zu Ihrer Codebasis zu stellen. Sie können GitHub Copilot auffordern, Code zu erklären, Änderungen vorzuschlagen oder Informationen zur Codebasis bereitzustellen.
 - **Bearbeiten**: Verwenden Sie diesen Modus, um ausgewählte Codedateien zu bearbeiten. Sie können GitHub Copilot verwenden, um Code umzugestalten, Kommentare hinzuzufügen oder andere Änderungen an Ihrem Code vorzunehmen.
 - **Agent**: Verwenden Sie diesen Modus, um GitHub Copilot als Agent auszuführen. Sie können GitHub Copilot verwenden, um Befehle auszuführen, Code auszuführen oder andere Aufgaben in Ihrem Arbeitsbereich auszuführen.
 
@@ -167,17 +167,17 @@ Führen Sie die folgenden Schritte aus, um diesen Abschnitt der Übung zu absolv
 
 1. Öffnen Sie die Chat-Ansicht von GitHub Copilot.
 
-    Die Chat-Ansicht bietet eine verwaltete Chatoberfläche zur Interaktion mit GitHub Copilot.
+    Die Chatansicht bietet eine verwaltete Chatoberfläche zur Interaktion mit GitHub Copilot.
 
-    Sie können die Chat-Ansicht über die Schaltfläche **Toggle Chat** ein- und ausblenden. Diese befindet sich oben im Visual-Studio-Code-Fenster, rechts neben dem Suchtextfeld.
+    Sie können die Chatansicht über die Schaltfläche **Chat umschalten** ein- und ausblenden. Diese befindet sich oben im Visual-Studio-Code-Fenster, rechts neben dem Suchtextfeld.
 
-    ![Screenshot der Copilot-Schaltfläche „Chat umschalten“.](./Media/m01-github-copilot-toggle-chat.png)
+    ![Screenshot der Copilot-Schaltfläche „Chat umschalten“](./Media/m01-github-copilot-toggle-chat.png)
 
-    Sie können auch die Tastenkombination **Strg+Alt+I** verwenden, um die Chat-Ansicht umzuschalten.
+    Sie können auch die Tastenkombination **Strg+Alt+I** verwenden, um die Chatansicht umzuschalten.
 
-1. Beachten Sie, dass die Chat-Ansicht standardmäßig im Modus **Fragen** geöffnet wird.
+1. Beachten Sie, dass die Chatansicht standardmäßig im Modus **Fragen** geöffnet wird.
 
-    Der aktuelle Chatmodus wird in der unteren rechten Ecke der Chat-Ansicht angezeigt. Chat-Antworten werden in der Chat-Ansicht angezeigt, wenn Sie im Modus **Fragen** arbeiten.
+    Der aktuelle Chatmodus wird in der unteren rechten Ecke der Chatansicht angezeigt. Chat-Antworten werden in der Chat-Ansicht angezeigt, wenn Sie im Modus **Fragen** arbeiten.
 
 1. Wählen Sie den Code in der Datei EnumHelper.cs aus.
 
@@ -208,9 +208,9 @@ Führen Sie die folgenden Schritte aus, um diesen Abschnitt der Übung zu absolv
     - LoanReturnStatus.cs
     - MembershipRenewalStatus.cs
 
-    Sie können die Dateien aus der EXPLORER-Ansicht von Visual Studio Code per Drag-and-Drop in die Chat-Ansicht ziehen. Sie können auch die Schaltfläche **Kontext hinzufügen** in der Chat-Ansicht verwenden, um Dateien und andere Ressourcen hinzuzufügen.
+    Sie können die Dateien aus der EXPLORER-Ansicht von Visual Studio Code per Drag-and-Drop in die Chat-Ansicht ziehen. Sie können auch die Schaltfläche **Kontext hinzufügen** in der Chatansicht verwenden, um Dateien und andere Ressourcen hinzuzufügen.
 
-    > **HINWEIS:** Durch das Hinzufügen von Dateien zum Chat-Kontext wird sichergestellt, dass GitHub Copilot diese Dateien beim Generieren einer Antwort berücksichtigt. Die Relevanz und die Genauigkeit der Antworten erhöhen sich, wenn GitHub Copilot den Kontext Ihrer Prompts versteht.
+    > **HINWEIS:** Durch das Hinzufügen von Dateien zum Chatkontext wird sichergestellt, dass GitHub Copilot diese Dateien beim Generieren einer Antwort berücksichtigt. Die Relevanz und die Genauigkeit der Antworten erhöhen sich, wenn GitHub Copilot den Kontext Ihrer Prompts versteht.
 
 1. Überprüfen Sie ihn und geben Sie dann den folgenden Prompt ein:
 
@@ -319,11 +319,11 @@ Führen Sie die folgenden Schritte aus, um diesen Abschnitt der Übung zu absolv
 
 Der Modus „Bearbeiten“ der Chat-Ansicht wurde für die Bearbeitung von Code in Ihrem Arbeitsbereich entwickelt. Sie können den Modus „Bearbeiten“ verwenden, um Code umzugestalten, Kommentare hinzuzufügen oder andere Änderungen an Ihrem Code vorzunehmen.
 
-1. Wählen Sie in der Chat-Ansicht **Modus festlegen** und dann **Bearbeiten** aus.
+1. Wählen Sie in der Chatansicht **Modus festlegen** und dann **Bearbeiten** aus.
 
     Wenn Sie gefragt werden, ob Sie eine neue Sitzung im Modus „Bearbeiten“ starten möchten, wählen Sie **Ja** aus.
 
-    Im Modus **Bearbeiten** zeigt GitHub Copilot Antworten als Vorschläge zum Aktualisieren des Codes im Code-Editor an. Der Modus „Bearbeiten“ wird in der Regel verwendet, wenn ein neues Feature implementiert, ein Fehler behoben oder Code umgestaltet wird.
+    Im Modus **Bearbeiten** zeigt GitHub Copilot Antworten als Empfehlungen zum Aktualisieren des Codes im Code-Editor an. Der Modus „Bearbeiten“ wird in der Regel verwendet, wenn ein neues Feature implementiert, ein Fehler behoben oder Code umgestaltet wird.
 
 1. Fügen Sie die folgenden Dateien zum Chat-Kontext hinzu:
 
@@ -858,8 +858,8 @@ Führen Sie die folgenden Schritte aus, um diesen Abschnitt der Übung zu absolv
 
 Die Klasse **JsonPatronRepository** enthält die folgenden drei Methoden:
 
-- SearchPatrons: Die Methode „SearchPatrons“ dient der Suche nach Patrons anhand ihres Namens. Diese Methode gibt eine sortierte Liste von Kunden zurück.
-- GetPatron: Die Methode „GetPatron“ wird verwendet, um einen Kunden anhand seiner ID abzurufen. Diese Methode gibt ein aufgefülltes Kunden-Objekt zurück.
+- SearchPatrons: Die Methode „SearchPatrons“ dient der Suche nach Kunden anhand ihres Namens. Diese Methode gibt eine sortierte Liste von Kunden zurück.
+- GetPatron: Die Methode „GetPatron“ wird verwendet, um einen Kunden anhand seiner ID abzurufen. Diese Methode gibt ein aufgefülltes Kundenobjekt zurück.
 - UpdatePatron: Die Methode „UpdatePatron“ wird verwendet, um die Informationen eines Kunden zu aktualisieren. Diese Methode aktualisiert den vorhandenen Kunden mit den neuen Daten und speichert die aktualisierte Kundensammlung.
 
 Jede der drei Methoden verwendet eine Foreach-Schleife, um die Kunden zu durchlaufen und Übereinstimmungen basierend auf der Sucheingabe oder ID zu finden.
@@ -959,11 +959,11 @@ Führen Sie die folgenden Schritte aus, um diesen Abschnitt der Übung zu absolv
 
 1. Ändern Sie in der Chat-Ansicht den Modus zu **Agent**
 
-    Der Modus „Agent“ wurde für die Ausführung von GitHub Copilot als Agent entwickelt. Sie können natürliche Sprache verwenden, um eine Aufgabe auf hoher Ebene zu erteilen. Der Agent wertet die zugewiesene Aufgabe aus, plant die erforderliche Arbeit und wendet die Änderungen auf Ihre Codebasis an.
+    Der Modus „Agent“ wurde für die Ausführung von GitHub Copilot als Agent entwickelt. Sie können natürliche Sprache verwenden, um eine übergeordnete Aufgabe zu erteilen. Der Agent wertet die zugewiesene Aufgabe aus, plant die erforderliche Arbeit und wendet die Änderungen auf Ihre Codebasis an.
 
-    Der Modus „Agent“ verwendet eine Kombination aus Codebearbeitung und dem Aufruf von Tools, um die von Ihnen angegebene Aufgabe auszuführen. Während Ihre Anforderung verarbeitet wird, werden die Ergebnisse von Bearbeitungen und Tool-Aufrufen überwacht und es wird iterativ an der Behebung aller auftretenden Probleme gearbeitet. Wenn der Agent ein Problem nicht beheben kann, wird er Sie bitten, einzugreifen. Wenn der Agent beispielsweise mehrere Iterationen benötigt, um dasselbe Problem zu beheben, wird der Prozess angehalten und Sie werden aufgefordert, zusätzlichen Kontext bereitzustellen, um Ihre Anfrage zu klären oder den Vorgang abzubrechen.
+    Der Modus „Agent“ verwendet eine Kombination aus Codebearbeitung und dem Aufruf von Tools, um die von Ihnen angegebene Aufgabe auszuführen. Während Ihre Anforderung verarbeitet wird, werden die Ergebnisse von Bearbeitungen und Tools überwacht und es wird iterativ an der Behebung aller auftretenden Probleme gearbeitet. Wenn der Agent ein Problem nicht beheben kann, wird er Sie bitten, einzugreifen. Wenn der Agent beispielsweise mehrere Iterationen benötigt, um dasselbe Problem zu beheben, wird der Prozess angehalten und Sie werden aufgefordert, zusätzlichen Kontext bereitzustellen, um Ihre Anfrage zu klären oder den Vorgang abzubrechen.
 
-    > **WICHTIG:** Wenn Sie die Chat-Ansicht im Modus „Agent“ verwenden, kann GitHub Copilot mehrere Premium-Anfragen stellen, um eine einzelne Aufgabe abzuschließen. Premium-Anfragen können durch benutzerinitiierte Eingabeaufforderungen und Folgeaktionen verwendet werden, die Copilot in Ihrem Auftrag ausführt. Die Gesamtzahl der verwendeten Premium-Anfragen hängt von der Komplexität des Vorgangs, der Anzahl der beteiligten Schritte und dem ausgewählten Modell ab.
+    > **WICHTIG:** Wenn Sie die Chatansicht im Agentmodus verwenden, kann GitHub Copilot mehrere Premiumanforderungen stellen, um eine einzelne Aufgabe abzuschließen. Premium-Anfragen können durch benutzerinitiierte Eingabeaufforderungen und Folgeaktionen verwendet werden, die Copilot in Ihrem Auftrag ausführt. Die Gesamtzahl der verwendeten Premiumanforderungen hängt von der Komplexität des Vorgangs, der Anzahl der beteiligten Schritte und dem ausgewählten Modell ab.
 
 1. Nehmen Sie sich kurz Zeit, um sich Gedanken über die Aufgabe zu machen, die Sie dem Agenten zuweisen möchten.
 

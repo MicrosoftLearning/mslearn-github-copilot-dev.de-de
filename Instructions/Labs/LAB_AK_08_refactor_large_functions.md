@@ -30,27 +30,13 @@ Bei Nutzung einer gehosteten Labumgebung für diese Übung:
 
 - Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, fügen Sie die folgende URL in die Navigationsleiste eines Browsers ein: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
 
-- Öffnen Sie eine Eingabeaufforderung, und führen Sie die folgenden Befehle aus:
+- So stellen Sie sicher, dass das .NET SDK für die Verwendung des offiziellen NuGet.org-Repositorys als Quelle zum Herunterladen und Wiederherstellen von Paketen konfiguriert ist:
 
-    Um sicherzustellen, dass Visual Studio Code für die Verwendung der richtigen Version von .NET konfiguriert ist, führen Sie den folgenden Befehl aus:
+    Öffnen Sie ein Befehlsterminal, und führen Sie den folgenden Befehl aus:
 
     ```bash
 
     dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org
-
-    ```
-
-    Um sicherzustellen, dass Git für die Verwendung Ihres Namens und Ihrer E-Mail-Adresse konfiguriert ist, aktualisieren Sie die folgenden Befehle mit Ihren Informationen, und führen Sie dann die Befehle aus:
-
-    ```bash
-
-    git config --global user.name "John Doe"
-
-    ```
-
-    ```bash
-
-    git config --global user.email johndoe@example.com
 
     ```
 
@@ -70,7 +56,7 @@ Führen Sie die folgenden Schritte aus, um das Beispielprojekt herunterzuladen u
 
     1. Navigieren Sie zu dem Ordner "Downloads" in Ihrer Lab-Umgebung.
 
-    1. Klicken Sie mit der rechten Maustaste auf *GHCopilotEx8LabApps.zip* und wählen Sie dann **Alle extrahieren** aus.
+    1. Klicken Sie mit der rechten Maustaste auf **GHCopilotEx8LabApps.zip** und wählen Sie dann **Alle extrahieren** aus.
 
     1. Wählen Sie **Dateien nach Extrahierung anzeigen** und dann **Extrahieren** aus.
 

@@ -56,7 +56,7 @@ Führen Sie die folgenden Schritte aus, um das Beispielprojekt herunterzuladen u
 
     1. Navigieren Sie zu dem Ordner "Downloads" in Ihrer Lab-Umgebung.
 
-    1. Klicken Sie mit der rechten Maustaste auf **GHCopilotEx8LabApps.zip** und wählen Sie dann **Alle extrahieren** aus.
+    1. Klicken Sie mit der rechten Maustaste auf *GHCopilotEx8LabApps.zip* und wählen Sie dann **Alle extrahieren** aus.
 
     1. Wählen Sie **Dateien nach Extrahierung anzeigen** und dann **Extrahieren** aus.
 

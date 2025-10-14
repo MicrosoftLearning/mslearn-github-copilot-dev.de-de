@@ -6,7 +6,7 @@ lab:
 
 # Konsolidieren von doppeltem Code mithilfe von GitHub Copilot
 
-Doppelte Codelogik wird häufig beim Entwickeln/Erweitern einer Codebasis eingeführt, die ähnliche oder verwandte Features enthält. Es ist möglicherweise nicht beabsichtigt, und es kann so einfach sein, code wiederzuverwenden, um ein neues Feature zu erstellen. Wenn sich die duplizierte Logik weiterentwickelt, um den umgebenden Code im Laufe der Zeit abzugleichen, kann das Problem komplizierter werden. Änderungen an Variablennamen, Funktionsnamen und Codestrukturen an einer Stelle (aber nicht an der anderen) können doppelte Logik maskieren. Ein rauschiger Zeitplan, eine schlechte Dokumentation und ein Mangel an ordnungsgemäßen Codeüberprüfungen kann das Problem noch verstärken. Am Ende erschwert duplizierte Logik das Lesen, Warten, Debuggen und Testen des Codes.
+Doppelte Codelogik wird häufig beim Entwickeln/Erweitern einer Codebasis eingeführt, die ähnliche oder verwandte Features enthält. Es war möglicherweise nicht beabsichtigt, und Sie haben einfach nur Code wiederverwendet – und dabei den Prototyp für ein neues Feature erstellt. Wenn sich die duplizierte Logik weiterentwickelt, um den umgebenden Code im Laufe der Zeit abzugleichen, kann das Problem komplizierter werden. Änderungen an Variablennamen, Funktionsnamen und Codestrukturen an einer Stelle (aber nicht an einer anderen) können doppelte Logik verbergen. Ein rauschiger Zeitplan, eine schlechte Dokumentation und ein Mangel an ordnungsgemäßen Codeüberprüfungen kann das Problem noch verstärken. Am Ende erschwert duplizierte Logik das Lesen, Warten, Debuggen und Testen des Codes.
 
 In dieser Übung überprüfen Sie ein vorhandenes Projekt mit duplizierter Codelogik, analysieren Die Optionen für die Konsolidierung, konsolidieren die duplizierte Codelogik und testen den umgestalteten Code, um sicherzustellen, dass es wie beabsichtigt funktioniert. Sie verwenden GitHub Copilot im Ask-Modus, um ein Verständnis für ein vorhandenes Codeprojekt zu erhalten und Optionen für die Konsolidierung der Logik zu erkunden. Sie verwenden GitHub Copilot im Agent-Modus, um den Code umzugestalten, indem Sie doppelte Logik in freigegebene Hilfsmethoden kombinieren. Sie testen den ursprünglichen und umgestalteten Code, um sicherzustellen, dass die konsolidierte Logik wie beabsichtigt funktioniert.
 
@@ -16,7 +16,7 @@ Diese Übung dauert ca. **30** Minuten.
 
 ## Vor der Installation
 
-Ihre Labumgebung muss Folgendes enthalten: Git 2.48 oder höher, .NET SDK 9.0 oder höher, Visual Studio Code mit der C#Dev Kit-Erweiterung und Zugriff auf ein GitHub-Konto mit aktiviertem GitHub Copilot.
+Ihre Labumgebung muss die folgenden Ressourcen enthalten: Git 2.48 oder höher, .NET SDK 9.0 oder höher, Visual Studio Code mit der C#Dev Kit-Erweiterung und Zugriff auf ein GitHub-Konto mit aktiviertem GitHub Copilot.
 
 ### Konfigurieren der Laborumgebung
 
@@ -98,7 +98,7 @@ Führen Sie die folgenden Schritte aus, um das Beispielprojekt herunterzuladen u
 
 Sie sind Softwareentwickler, die für eine Beratungsfirma arbeiten. Ihre Clients benötigen Hilfe beim Konsolidieren doppelter Codelogik. Ihr Ziel ist es, die Code-Wartung zu verbessern und gleichzeitig die vorhandene Funktionalität beizubehalten. Sie werden der folgenden App zugewiesen:
 
-- E-CommerceOrdersAndReturns: Dies ist eine E-Commerce-App, die Kundenbestellungen verarbeitet und Produktrückführungen verarbeitet. Sie enthält die Hauptgeschäftslogik für die Überprüfung von Bestellungen und Rückgaben, die Berechnung der Versandkosten, das Senden von E-Mail-Benachrichtigungen, das Protokollieren von Überwachungsaktivitäten und das Verwalten von Bestandsebenen.
+- E-CommerceOrdersAndReturns: Dies ist eine E-Commerce-App, die Kundenbestellungen und Produktrückgaben bearbeitet. Sie enthält die Hauptgeschäftslogik für die Überprüfung von Bestellungen und Rückgaben, die Berechnung der Versandkosten, das Senden von E-Mail-Benachrichtigungen, das Protokollieren von Überwachungsaktivitäten und das Verwalten von Bestandsebenen.
 
 Diese Übung umfasst die folgenden Aufgaben:
 
@@ -111,7 +111,7 @@ Diese Übung umfasst die folgenden Aufgaben:
 
 Der erste Schritt bei jeder Umgestaltung besteht darin, sicherzustellen, dass Sie die vorhandene Codebasis verstehen. Es ist wichtig, die Codestruktur, die Geschäftslogik und die Ergebnisse zu verstehen, die beim Ausführen des Codes generiert werden.
 
-In dieser Aufgabe überprüfen Sie die Hauptkomponenten des E-Commerce-Auftrags- und Rückgabeverarbeitungsprojekts, scannen den Code auf doppelte Codemuster und testen den Code.
+In dieser Aufgabe überprüfen Sie die Hauptkomponenten des Projekts zur Bearbeitung von E-Commerce-Aufträgen und -Rückgaben, suchen im Code nach doppelten Codemustern, und testen den Code.
 
 Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
@@ -123,7 +123,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
     Öffnen Sie **OrderProcessor.cs** und **ReturnProcessor.cs** nebeneinander. Diese Klassen stellen die Hauptgeschäftslogik für die Verarbeitung von Kundenbestellungen bzw. Produktrückführungen dar.
 
-    Beachten Sie, dass die beiden Klassen ähnliche Methodensignaturen und Verarbeitungsmuster aufweisen. Dies ist die offensichtlichste Art von Duplizierung, aber es gibt zusätzliche, subtilere Duplikate in der gesamten Codebasis.
+    Beachten Sie, dass die beiden Klassen ähnliche Methodensignaturen und Verarbeitungsmuster aufweisen. Diese Ähnlichkeit ist die offensichtlichste Art der Duplizierung, aber es gibt weitere, weniger auffällige Duplikate in der gesamten Codebasis.
 
 1. Überprüfen Sie die Dienstebene.
 
@@ -145,7 +145,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     - Aktualisierte Bestandsebenen
     - Sicherheitsüberprüfungstests mit verschiedenen ungültigen Eingaben
 
-    Die Anwendung führt fünf Testszenarien aus, um sowohl erfolgreiche Verarbeitungs- als auch Sicherheitsüberprüfungsfehler zu veranschaulichen.
+    Die Anwendung führt fünf Testszenarios aus, um sowohl erfolgreiche Verarbeitungs- als auch Sicherheitsüberprüfungsfehler zu veranschaulichen.
 
 1. Nehmen Sie sich eine Minute Zeit, um alle duplizierten Codemuster zu kategorisieren, die Sie beobachtet haben.
 
@@ -193,7 +193,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
 1. Nehmen Sie sich eine Minute Zeit, um die Antwort von GitHub Copilot zu überprüfen.
 
-    GitHub Copilot sollte die `Validate()` Methodenduplizierung und die ähnlichen Muster in `CalculateShipping()` Methoden identifizieren. Es kann auch ähnliche Muster in Bezug auf die Protokollierung, Fehlerbehandlung und Zahlungs-/Erstattungsverarbeitung beachten.
+    GitHub Copilot sollte die `Validate()` Methodenduplizierung und die ähnlichen Muster in `CalculateShipping()` Methoden identifizieren. Möglicherweise werden auch ähnliche Muster in Bezug auf die Überwachungsprotokollierung, Fehlerbehandlung und Zahlungs-/Rückerstattungsverarbeitung aufgeführt.
 
 1. Aktualisieren Sie den Chatkontext, um die **EmailService.cs** Datei anzugeben.
 
@@ -209,7 +209,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
 1. Nehmen Sie sich eine Minute Zeit, um die Antwort von GitHub Copilot zu überprüfen.
 
-    GitHub Copilot sollte die doppelte Logik für die Verarbeitung von Bestellbestätigungen und Rückgabebestätigungen identifizieren. Dies umfasst einen vorlagenbasierten Ansatz zum Vorbereiten und Senden von E-Mails. GitHub Copilot kann auch doppelte Muster im Zusammenhang mit Hilfsmethoden und Konsolenausgabe identifizieren.
+    GitHub Copilot sollte die doppelte Logik für die Verarbeitung von Bestellbestätigungen und Rückgabebestätigungen identifizieren. Die Antwort umfasst Vorlagen zum Vorbereiten und Senden von E-Mails. GitHub Copilot kann auch doppelte Muster im Zusammenhang mit Hilfsmethoden und Konsolenausgaben identifizieren.
 
 1. Aktualisieren Sie den Chatkontext, um die **dateien AuditService.cs** und **InventoryService.cs** anzugeben.
 
@@ -235,7 +235,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     @workspace Analyze the entire ECommerceOrderAndReturn codebase and identify all forms of code duplication, including method-level, service-level, and architectural pattern duplications. Prioritize the duplications by impact and refactoring difficulty. Describe an approach for consolidating this code.
     ```
 
-    Nachdem Sie bestimmte Dateien analysiert haben, können Sie eine breitere Ansicht erhalten, indem Sie GitHub Copilot bitten, die gesamte Codebasis in die Analyse einzuschließen. Der erhöhte Bereich kann zusätzliche Duplizierungsmuster anzeigen, z. B. ähnliche Fehlerbehandlung, Protokollierung und Validierungslogik über mehrere Dateien oder Ebenen hinweg. Eine einzelne Antwort, die Ihre Umgestaltungsstrategie informiert und priorisiert, ist häufig hilfreich.
+    Nachdem Sie bestimmte Dateien analysiert haben, können Sie eine breitere Ansicht erhalten, indem Sie GitHub Copilot bitten, die gesamte Codebasis in die Analyse einzuschließen. Durch den erweiterten Bereich können weitere Duplizierungsmuster angezeigt werden, z. B. ähnliche Logik bei Fehlerbehandlung, Protokollierung und Validierung über mehrere Dateien oder Ebenen hinweg. Eine einzelne Antwort, die Ihre Umgestaltungsstrategie informiert und priorisiert, ist häufig hilfreich.
 
     > **HINWEIS:** Die `@workspace` Schlüsselwörter `#codebase` weisen GitHub Copilot an, die gesamte Codebasis im Kontext der Analyse einzuschließen. Das `@workspace` Schlüsselwort ist nur verfügbar, wenn GitHub Copilot im Ask-Modus verwendet wird. Das `#codebase` Schlüsselwort kann in jedem Modus verwendet werden (Fragen, Bearbeiten oder Agent).
 
@@ -261,21 +261,21 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
     Referenzieren Sie die Ergebnisse von GitHub Copilot mit Ihren eigenen Beobachtungen. Stellen Sie sicher, dass Sie nicht nur verstehen, was dupliziert ist, sondern auch, warum diese Muster vorhanden sind und wie sie konsolidiert werden sollten, während die Geschäftslogikintegrität beibehalten wird.
 
-Der Ask-Modus von GitHub Copilot ist besonders leistungsfähig, um subtile Duplikate zu identifizieren, die über einfache Kopier-Paste-Szenarien hinausgehen. Sie kann ähnliche logische Muster, gleichwertige Geschäftsregeln, die unterschiedlich implementiert wurden, und architektonische Duplikate erkennen, die sich über mehrere Dateien erstrecken.
+Der Fragemodus von GitHub Copilot ist geeignet, um weniger auffällige Duplikate zu identifizieren, die über einfache Szenarios nach dem Motto „Kopieren und Einfügen“ hinausgehen. Sie kann ähnliche logische Muster, gleichwertige Geschäftsregeln, die unterschiedlich implementiert wurden, und architektonische Duplikate erkennen, die sich über mehrere Dateien erstrecken.
 
 > **HINWEIS:** Die während dieser Aufgabe generierte Analyse wird verwendet, um die Umgestaltungsstrategie zu informieren, die Sie im nächsten Abschnitt implementieren.
 
 ### Konsolidieren doppelter Logik mit GitHub Copilot Chat (Agent-Modus)
 
-Mit dem Agentmodus von GitHub Copilot können Sie komplexe, mehrstufige Umgestaltungsaufgaben zuweisen, die mehrere Dateien und Architekturebenen umfassen. Der Agent kann autonom neue Dateien erstellen, vorhandenen Code ändern und umfassende Umgestaltungsstrategien implementieren und gleichzeitig den Fortschritt auf dem Laufenden halten.
+Mit dem Agentmodus von GitHub Copilot können Sie etwas komplexere, mehrstufige Umgestaltungsaufgaben zuweisen, die mehrere Dateien und Architekturebenen umfassen. Der Agent kann autonom neue Dateien erstellen, vorhandenen Code ändern und umfassende Umgestaltungsstrategien implementieren und gleichzeitig den Fortschritt auf dem Laufenden halten.
 
-In dieser Aufgabe verwenden Sie GitHub Copilot Agent, um die in der vorherigen Aufgabe identifizierten doppelten Codemuster systematisch zu beseitigen, beginnend mit den einfachsten Duplizierungen und dem Fortschritt zu komplexeren Dienstebenenkonsolidierungen.
+In dieser Aufgabe verwenden Sie den GitHub Copilot-Agent, um die in der vorherigen Aufgabe identifizierten doppelten Codemuster systematisch zu beseitigen. Dabei beginnen Sie mit den einfachen Duplizierungen, bevor Sie mit komplexeren Konsolidierungen auf Dienstebene fortfahren.
 
 Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
 1. Wechseln Sie die GitHub Copilot Chat-Ansicht in den Agentmodus.
 
-    Wenn Sie den Agent-Modus verwenden, kann GitHub Copilot autonome Änderungen an Ihrer Codebasis vornehmen. Der Agentmodus eignet sich besonders für komplexe, mehrstufige Umgestaltungsaufgaben.
+    Wenn Sie den Agentmodus verwenden, kann GitHub Copilot autonome Änderungen an Ihrer Codebasis vornehmen. Der Agentmodus eignet sich für etwas komplexere, mehrstufige Umgestaltungsaufgaben.
 
     Um Modi zu ändern, suchen Sie die Modusauswahl (in der Regel in der unteren linken Ecke der Chatansicht), und wählen Sie "Agent"** aus**.
 
@@ -309,13 +309,13 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
     Der Status des Agents sollte im Chat sichtbar sein, da er die zugewiesene Aufgabe abgeschlossen hat.
 
-    Um den Agent bei der Verarbeitung der Aufgabe zu unterstützen, geben Sie bei Bedarf die Berechtigung an, den Vorgang fortzusetzen oder zusätzlichen Kontext bereitzustellen. Wenn der Agent beispielsweise die Berechtigung zum Erstellen oder Ausführen der Anwendung anfragt, wählen Sie **"Weiter" aus**
+    Um den Agent während der Verarbeitung der Aufgabe zu unterstützen, erteilen Sie die Berechtigung, den Vorgang fortzusetzen, oder stellen Sie bei Bedarf weiteren Kontext bereit. Wenn der Agent beispielsweise die Berechtigung zum Erstellen oder Ausführen der Anwendung anfragt, wählen Sie **"Weiter" aus**
 
-    Der Agent führt während dieser Aufgabe folgendes aus:
+    Der Agent führt während dieser Aufgabe die folgenden Schritte aus:
 
     - Erstellen einer neuen **ValidationService.cs** Datei im Ordner "Dienste"
     - Extrahieren der Validierungslogik in eine wiederverwendbare Methode
-    - Aktualisieren beider Prozessorklassen für die Verwendung des neuen Diensts
+    - Aktualisieren beider Prozessorklassen (für die Verwendung des neuen Diensts)
     - Entfernen der doppelten privaten Überprüfungsmethoden
     - Überprüfen der Funktionalität mit einem erfolgreichen Build- und Testlauf
 
@@ -387,9 +387,9 @@ Der GitHub Copilot Agent zeichnet sich durch komplexe Refactoring-Aufgaben über
 
 ### Testen der umgestalteten E-Commerce-Bestellungen und Zurückgeben von Code
 
-Manuelle Tests und Überprüfungen sind entscheidend, um sicherzustellen, dass Ihr umgestalterter Code die beabsichtigte Geschäftslogik und -funktionalität verwaltet. Ein erfolgreicher Umgestaltungsprozess sollte das beabsichtigte Ziel erreichen (z. B. das Konsolidieren doppelter Codelogik) und gleichzeitig das identische Verhalten mit der ursprünglichen Implementierung erzeugen.
+Manuelle Tests und Überprüfungen sind entscheidend, um sicherzustellen, dass der umgestaltete Code die beabsichtigte Geschäftslogik und Funktionalität beibehält. Ein erfolgreicher Umgestaltungsprozess sollte das beabsichtigte Ziel erreichen (z. B. das Konsolidieren doppelter Codelogik) und gleichzeitig das identische Verhalten mit der ursprünglichen Implementierung erzeugen.
 
-In dieser Aufgabe überprüfen Sie, ob der umgestaltete Code alle ursprünglichen Funktionen verwaltet und dass die Konsolidierung erfolgreich war.
+In dieser Aufgabe überprüfen Sie, ob der umgestaltete Code alle ursprünglichen Funktionen beibehalten hat und die Konsolidierung erfolgreich war.
 
 Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
@@ -399,7 +399,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
 1. Führen Sie die umgestaltete Anwendung aus, und erfassen Sie die Ausgabe.
 
-    Die Anwendung sollte alle fünf Testszenarien genau wie zuvor ausführen:
+    Die Anwendung sollte alle fünf Testszenarios genau wie zuvor ausführen:
 
     - Anfängliche Bestandsanzeige
     - Gültige Auftragsverarbeitung mit vollständigem Workflow
@@ -431,7 +431,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     - **Wiederverwendbarkeit**: Gemeinsame Dienste können für zukünftige Anforderungen problemlos erweitert werden
     - **Erweiterbarkeit:** Neue Features können mit minimalen Auswirkungen auf vorhandenen Code hinzugefügt werden.
 
-Manuelle Tests stellen sicher, dass Ihre Konsolidierungsbemühungen das beabsichtigte Ziel erreicht haben: Das Vermeiden doppelter Code bei gleichzeitiger Wartung der Systemfunktionalität. Die Architektur bietet jetzt eine besser verwendbare Grundlage für die zukünftige Entwicklung, bei der Änderungen von Geschäftsregeln an einem einzigen Ort implementiert werden können, anstatt Updates über mehrere doppelte Implementierungen hinweg zu erfordern.
+Mit manuellen Tests überprüfen Sie, ob Ihre Konsolidierungsmaßnahmen den beabsichtigten Zweck erfüllt haben: doppelten Code vermeiden und die Systemfunktionalität beibehalten. Die Architektur bietet jetzt eine besser verwendbare Grundlage für die zukünftige Entwicklung, bei der Änderungen von Geschäftsregeln an einem einzigen Ort implementiert werden können, anstatt Updates über mehrere doppelte Implementierungen hinweg zu erfordern.
 
 ## Zusammenfassung
 
@@ -439,4 +439,4 @@ In dieser Übung haben Sie gelernt, wie Sie GitHub Copilot verwenden, um doppelt
 
 ## Bereinigen
 
-Nachdem Sie die Übung abgeschlossen haben, nehmen Sie sich eine Minute Zeit, um sicherzustellen, dass Sie keine Änderungen an Ihrem GitHub-Konto oder GitHub Copilot-Abonnement vorgenommen haben, das Sie nicht beibehalten möchten. Wenn Sie Änderungen vorgenommen haben, setzen Sie sie nach Bedarf zurück. Wenn Sie einen lokalen PC als Lab-Umgebung verwenden, können Sie den Beispielprojektordner archivieren oder löschen, den Sie für diese Übung erstellt haben.
+Nachdem Sie die Übung abgeschlossen haben, nehmen Sie sich kurz Zeit, um sicherzustellen, dass Sie keine Änderungen an Ihrem GitHub-Konto oder GitHub Copilot-Abonnement vorgenommen haben, das Sie nicht beibehalten möchten. Wenn Sie Änderungen vorgenommen haben, setzen Sie sie nach Bedarf zurück. Wenn Sie einen lokalen PC als Lab-Umgebung verwenden, können Sie den Beispielprojektordner archivieren oder löschen, den Sie für diese Übung erstellt haben.

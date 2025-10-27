@@ -6,7 +6,7 @@ lab:
 
 # Umgestalten großer Funktionen mithilfe von GitHub Copilot
 
-Große Funktionen können schwer zu lesen, zu verwalten und zu testen sein. Sie enthalten häufig mehrere Verantwortlichkeiten und können auf einen Blick herausfordernd zu verstehen sein. Das Umgestalten großer Funktionen in kleinere, fokussiertere Funktionen kann die Lesbarkeit und Wartung von Code verbessern.
+Große Funktionen können schwer zu lesen, zu verwalten und zu testen sein. Sie enthalten häufig mehrere Verantwortlichkeiten und können auf einen Blick herausfordernd zu verstehen sein. Die Lesbarkeit und Wartung von Code verbessert sich, wenn große Funktionen in kleinere, fokussiertere Funktionen umgestaltet werden.
 
 In dieser Übung überprüfen Sie ein vorhandenes Projekt, das eine große Funktion enthält, Analysieren Sie Ihre Optionen für kleinere Funktionen mit einfacherer Verantwortung, umgestalten Sie die große Funktion in kleinere Funktionen, und testen Sie den umgestalteten Code, um sicherzustellen, dass es wie beabsichtigt funktioniert. Sie verwenden GitHub Copilot im Ask-Modus, um ein Verständnis für ein vorhandenes Codeprojekt zu erhalten und Optionen für die Umgestaltung der Logik zu erkunden. Sie verwenden GitHub Copilot im Agent-Modus, um den Code umzugestalten, indem Sie Codeabschnitte aus der großen Funktion extrahieren, um kleinere Funktionen zu erstellen. Sie testen den ursprünglichen und umgestalteten Code, um sicherzustellen, dass der umgestaltete Code wie beabsichtigt funktioniert.
 
@@ -16,7 +16,7 @@ Diese Übung dauert ca. **30** Minuten.
 
 ## Vor der Installation
 
-Ihre Labumgebung muss Folgendes enthalten: Git 2.48 oder höher, .NET SDK 9.0 oder höher, Visual Studio Code mit der C#Dev Kit-Erweiterung und Zugriff auf ein GitHub-Konto mit aktiviertem GitHub Copilot.
+Ihre Labumgebung muss die folgenden Ressourcen enthalten: Git 2.48 oder höher, .NET SDK 9.0 oder höher, Visual Studio Code mit der C#Dev Kit-Erweiterung und Zugriff auf ein GitHub-Konto mit aktiviertem GitHub Copilot.
 
 ### Konfigurieren der Laborumgebung
 
@@ -56,7 +56,7 @@ Führen Sie die folgenden Schritte aus, um das Beispielprojekt herunterzuladen u
 
     1. Navigieren Sie zu dem Ordner "Downloads" in Ihrer Lab-Umgebung.
 
-    1. Klicken Sie mit der rechten Maustaste auf *GHCopilotEx8LabApps.zip* und wählen Sie dann **Alle extrahieren** aus.
+    1. Klicken Sie mit der rechten Maustaste auf **GHCopilotEx8LabApps.zip** und wählen Sie dann **Alle extrahieren** aus.
 
     1. Wählen Sie **Dateien nach Extrahierung anzeigen** und dann **Extrahieren** aus.
 
@@ -147,13 +147,13 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
 1. Nehmen Sie sich eine Minute Zeit, um die **OrderProcessor-Klasse** zu überprüfen.
 
-    Beachten Sie die ProcessOrder-Methode. Diese Methode stellt die Hauptgeschäftslogik für die Verarbeitung von Kundenaufträgen dar. Beachten Sie, dass sie mehrere unterschiedliche Vorgänge verarbeitet. Die ProcessOrder-Methode ist absichtlich groß und komplex, um reale Szenarien zu veranschaulichen, in denen geschäftslogik sich im Laufe der Zeit angesammelt hat, wodurch es schwierig ist, sie zu lesen, zu testen und zu verwalten.
+    Beachten Sie die ProcessOrder-Methode. Diese Methode stellt die Hauptgeschäftslogik für die Verarbeitung von Kundenaufträgen dar. Beachten Sie, dass sie mehrere unterschiedliche Vorgänge verarbeitet. Die ProcessOrder-Methode ist absichtlich groß und komplex, um reale Szenarios zu veranschaulichen, in denen die Geschäftslogik im Laufe der Zeit komplexer wurde, was es schwierig macht, zu lesen, zu testen und zu verwalten.
 
 1. Klicken Sie mit der rechten Maustaste auf die **ProcessOrder-Methode**, und wählen Sie **dann "Copilot** > **Erklären**" aus.
 
     Wenn Sie aufgefordert werden, einen eingeschlossenen Bereich auszuwählen **, der erläutert**werden soll, wählen Sie **"ProcessOrder**" aus.
 
-    GitHub Copilot analysiert die ProcessOrder-Methode und bietet eine detaillierte Erläuterung der Funktionsweise des Codes und hilft Ihnen, die Geschäftslogik zu verstehen, bevor Sie die Umgestaltungsoptionen untersuchen.
+    GitHub Copilot analysiert die ProcessOrder-Methode und bietet eine detaillierte Erläuterung der Funktionsweise des Codes, die Ihnen hilft, die Geschäftslogik zu verstehen, bevor Sie die Umgestaltungsoptionen untersuchen.
 
 1. Nehmen Sie sich ein paar Minuten Zeit, um die Erklärung von GitHub Copilot zu überprüfen.
 
@@ -171,7 +171,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     dotnet run
     ```
 
-1. Überprüfen Sie die Konsolenausgabe, die beim Ausführen der Anwendung generiert wird.
+1. Überprüfen Sie die von der Anwendung generierte Konsolenausgabe.
 
     Die Anwendung generiert Ausgabe für vier Testfälle. Jeder Testfall veranschaulicht ein anderes Szenario:
 
@@ -186,13 +186,13 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
     Die ProcessOrder-Methode hat mehrere unterschiedliche Zuständigkeiten. Jeder der entsprechenden Codeabschnitte kann in eine separate Methode extrahiert werden.
 
-Wenn Sie die vorhandenen Funktionen verstehen und Möglichkeiten zur Umgestaltung identifizieren, können Sie eine Umgestaltungsstrategie erstellen, die Geschäftslogik verwaltet und die Codestruktur verbessert. Die mehrschichtige Architektur bietet bereits eine gute Trennung von Bedenken auf Projektebene, aber die große ProcessOrder-Methode benötigt Aufmerksamkeit.
+Wenn Sie die vorhandenen Funktionen verstehen und Möglichkeiten zur Umgestaltung identifizieren, können Sie eine Umgestaltungsstrategie erstellen, die die Geschäftslogik verwaltet und die Codestruktur verbessert. Die mehrschichtige Architektur bietet bereits eine gute Trennung von Bedenken auf Projektebene, aber die große ProcessOrder-Methode benötigt Aufmerksamkeit.
 
 ### Identifizieren von Umgestaltungsmöglichkeiten mithilfe von GitHub Copilot Chat (Ask-Modus)
 
 Der Ask-Modus von GitHub Copilot Chat ist ein hervorragendes Tool zum Analysieren komplexer Code und zur Identifizierung von Möglichkeiten für die Umgestaltung großer Methoden. Im Ask-Modus kann Copilot Ihre Codestruktur analysieren und Methoden vorschlagen, um monolithische Methoden in kleinere, fokussiertere Methoden aufzuteilen.
 
-In dieser Aufgabe verwenden Sie GitHub Copilot, um die ProcessOrder-Methode auszuwerten und Umgestaltungsmöglichkeiten zu identifizieren, die Geschäftslogik beibehalten und die Codestruktur verbessern.
+In dieser Aufgabe verwenden Sie GitHub Copilot, um die ProcessOrder-Methode auszuwerten und Umgestaltungsmöglichkeiten zu identifizieren, die die Geschäftslogik verwalten und gleichzeitig die Codestruktur verbessern.
 
 Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
@@ -248,7 +248,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     - Anleitung zur konsistenten Behandlung von Fehlern über Methoden hinweg.
     - Erläuterungen dazu, wie die umgestaltete Struktur die Verhaltbarkeit verbessert.
 
-1. Bitten Sie um zusätzliche Anleitungen zu Fehlerbehandlungsmustern.
+1. Bitten Sie um weitere Anleitungen zu Fehlerbehandlungsmustern.
 
     Das Verständnis des Fehlerbehandlungsprozesses ist entscheidend für die Aufrechterhaltung des vorhandenen Verhaltens, wenn Sie die ProcessOrder-Methode umgestalten. Sie können GitHub Copilot die aktuelle Fehlerbehandlungsstrategie analysieren und eine Möglichkeit vorschlagen, das vorhandene Verhalten aufrechtzuerhalten oder zu verbessern.
 
@@ -260,7 +260,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
 1. Nehmen Sie sich ein paar Minuten Zeit, um die Empfehlungen zur Fehlerbehandlung zu überprüfen.
 
-    GitHub Copilot sollte Anleitungen zur Aufrechterhaltung konsistenter Fehlerbehandlungsmuster in den umgestalteten Methoden bereitstellen. Dies ist wichtig, da die aktuelle Methode komplexe Fehlerbehandlungen mit Rollbackprozeduren aufweist, die beibehalten werden müssen.
+    GitHub Copilot sollte Anleitungen zur Aufrechterhaltung konsistenter Fehlerbehandlungsmuster in den umgestalteten Methoden bereitstellen. Diese Anleitung ist wichtig, da die aktuelle Methode komplexe Fehlerbehandlungen mit Rollbackprozeduren aufweist, die beibehalten werden müssen.
 
     Die Empfehlungen sollten folgendes ansprechen:
     - Wie Sie das aktuelle Rollbackverhalten beibehalten (z. B. das Freigeben des Inventars bei Zahlungsfehlern).
@@ -314,7 +314,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
     Der Codekommentar sollte sich nach der endgültigen schließenden Klammer der ProcessOrder-Methode und vor der schließenden Klammer der OrderProcessor-Klasse befinden.
 
-    Sie weisen GitHub Copilot an, diesen Speicherort zu verwenden, wenn er die neuen Einzelzweckmethoden innerhalb der OrderProcessor-Klasse erstellt.
+    Sie können GitHub Copilot anweisen, diesen Speicherort zu verwenden, wenn er die neuen Einzelzweckmethoden innerhalb der OrderProcessor-Klasse erstellt.
 
 1. Bitten Sie GitHub Copilot Agent, Stubmethoden zu erstellen, die zum Speichern des extrahierten Codes verwendet werden können.
 
@@ -356,7 +356,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
     GitHub Copilot Agent sollte zunächst seinen Plan für die Umgestaltung jedes Abschnitts der ProcessOrder-Methode beschreiben. Der Plan sollte einen schrittweisen Ansatz für jeden Codeabschnitt enthalten, der Folgendes umfasst: Verschieben von Code aus der ProcessOrder-Methode in die entsprechende Einzelprozessmethode, Ersetzen des extrahierten Codes in ProcessOrder durch einen Methodenaufruf und Testen der App, um sicherzustellen, dass der umgestaltete Code wie beabsichtigt funktioniert.
 
-    Der Agent stellt außerdem Updates in der Chatansicht bereit, die den Fortschritt beschreiben, einschließlich aller probleme, die auftreten. Sie können mit dem Agent interagieren, um Anweisungen zu klären oder bei Bedarf zusätzlichen Kontext bereitzustellen.
+    Der Agent stellt außerdem Updates in der Chatansicht bereit, die den Fortschritt beschreiben, einschließlich aller auftretenden Probleme. Sie können mit dem Agent interagieren, um Anweisungen zu klären oder bei Bedarf zusätzlichen Kontext bereitzustellen.
 
     GitHub Copilot Agent fordert in der Regel die Berechtigung zum Erstellen oder Ausführen der Anwendung während des Umgestaltungsprozesses auf. Wählen Sie in der Chatansicht die **Schaltfläche "Weiter** " aus, damit der Agent fortfahren kann.
 
@@ -450,7 +450,7 @@ GitHub Copilot Agent zeichnet sich bei systematischen Umgestaltungsaufgaben aus,
 
 Manuelle Tests und Überprüfungen stellen sicher, dass Ihr umgestalterter Code die beabsichtigte Geschäftslogik und -funktionalität verwaltet. Ein erfolgreicher Umgestaltungsprozess sollte die Codestruktur verbessern und gleichzeitig identisches Verhalten mit der ursprünglichen Implementierung erzeugen.
 
-In dieser Aufgabe testen Sie den umgestalteten Code, um zu überprüfen, ob alle Geschäftslogik beibehalten wurde und dass die Umgestaltung die Ziele einer verbesserten Wartung und Lesbarkeit erreicht hat.
+In dieser Aufgabe testen Sie den umgestalteten Code, um zu überprüfen, ob die gesamte Geschäftslogik beibehalten wird und die Lesbarkeit und Wartung von Code verbessert wird.
 
 Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
@@ -465,9 +465,9 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
     Der umgestaltete Code sollte genau die gleichen Ergebnisse erzeugen, was zeigt, dass die Geschäftslogik während des gesamten Umgestaltungsprozesses beibehalten wurde.
 
-1. Erstellen und testen Sie zusätzliche Edgefallszenarien, um die Stabilität zu gewährleisten.
+1. Erstellen und testen Sie weitere Edgefallszenarios, um die Stabilität zu gewährleisten.
 
-    Erstellen Sie zusätzliche Testszenarien, um zu überprüfen, ob die Fehlerbehandlung in verschiedenen Edgefällen weiterhin ordnungsgemäß funktioniert. Sie können die Testfälle in **Program.cs** vorübergehend ändern, um zusätzliche Szenarien zu testen.
+    Erstellen Sie zusätzliche Testszenarios, um zu überprüfen, ob die Fehlerbehandlung in verschiedenen Edgefällen weiterhin ordnungsgemäß funktioniert. Sie können die Testfälle in **Program.cs** vorübergehend ändern, um andere Szenarios zu testen.
 
     Sie können z. B. den folgenden Codeausschnitt vor dem Code hinzufügen, der die Testzusammenfassung anzeigt:
 
@@ -491,13 +491,13 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     testResults.Add($"Test 6: {(result6.IsSuccess ? "FAILED" : "PASSED")} - Should reject invalid shipping address");
     ```
 
-    Diese zusätzlichen Tests helfen zu überprüfen, ob die umgestaltete Überprüfungslogik Edgefälle korrekt verarbeitet und dass Fehlermeldungen mit der ursprünglichen Implementierung konsistent bleiben.
+    Diese zusätzlichen Tests helfen sicherzustellen, dass die umgestaltete Überprüfungslogik Edgefälle korrekt verarbeitet und Fehlermeldungen mit der ursprünglichen Implementierung konsistent bleiben.
 
 1. Ausführen der Anwendung und Überprüfen der Ergebnisse
 
     Wenn Sie die Anwendung ausführen, sollten die Testergebnisse in der Konsole angezeigt werden, die angeben, ob jeder Testfall bestanden oder fehlgeschlagen ist. Achten Sie auf alle Fehlermeldungen oder Protokolle, die während der Testausführung generiert werden.
 
-    Wenn Sie beispielsweise die oben aufgeführten Szenarien "Test 5" und "Test 6" hinzugefügt haben, sollte die neue Testausgabe und die aktualisierte Zusammenfassung ähnlich wie folgt aussehen:
+    Wenn Sie beispielsweise die oben aufgeführten Szenarios „Test 5“ und „Test 6“ hinzugefügt haben, sollte die neue Testausgabe und die aktualisierte Zusammenfassung dem folgenden Beispiel ähneln:
 
     ```text
 
@@ -523,7 +523,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
     Überprüfen Sie die **order_audit_log.txt** Datei, um sicherzustellen, dass die Überwachungsprotokollierung während der umgestalteten Methoden weiterhin ordnungsgemäß funktioniert. Die neuesten Ereignisse befinden sich am Ende der Datei.
 
-    Der Überwachungspfad sollte abgeschlossen sein und nachweisen, dass die Protokollierung über alle extrahierten Methoden hinweg beibehalten wurde.
+    Der Überwachungspfad sollte abgeschlossen sein und nachweisen, dass die Protokollierung über alle extrahierten Methoden hinweg beibehalten wird.
 
     > **TIPP**: Die order_audit_log.txt Datei wird im aktuellen Arbeitsverzeichnis der Anwendung erstellt/aktualisiert. Je nachdem, wie Sie das ECommerce.Console-Projekt ausführen, könnte das Arbeitsverzeichnis das Verzeichnis "src/ECommerce.Console/bin/Debug/net9.0" anstelle des Verzeichnisses "src/ECommerce.Console" sein. Um die Überwachungsdatei im Verzeichnis "src/ECommerce.Console" zu generieren, führen Sie die Anwendung über das Terminal mit einem .NET CLI-Befehl aus.
 
@@ -551,7 +551,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     - Unerwartete Fehler.
         - LogUnexpectedError(string orderId, Zeichenfolgenfehler)
 
-Manuelle Tests stellen sicher, dass Ihre Umgestaltungsbemühungen erfolgreich das Ziel erreicht haben, die Codestruktur zu verbessern und gleichzeitig die Systemfunktionalität aufrechtzuerhalten. Der umgestaltete Code bietet jetzt eine viel besser verwendbare Grundlage, in der jede Methode eine klare, fokussierte Verantwortung hat, und zukünftige Verbesserungen und Fehlerbehebungen erheblich einfacher zu implementieren.
+Manuelle Tests stellen sicher, dass Ihre Umgestaltungsbemühungen das Ziel erreicht haben, die Codestruktur zu verbessern und gleichzeitig die Systemfunktionalität aufrechtzuerhalten. Der umgestaltete Code bietet jetzt eine viel besser verwendbare Grundlage, in der jede Methode eine klare, fokussierte Zuständigkeit hat, um zukünftige Verbesserungen und Fehlerbehebungen einfacher zu implementieren.
 
 ## Zusammenfassung
 
@@ -559,4 +559,4 @@ In dieser Übung haben Sie gelernt, wie Sie GitHub Copilot verwenden, um große 
 
 ## Bereinigen
 
-Nachdem Sie die Übung abgeschlossen haben, nehmen Sie sich eine Minute Zeit, um sicherzustellen, dass Sie keine Änderungen an Ihrem GitHub-Konto oder GitHub Copilot-Abonnement vorgenommen haben, das Sie nicht beibehalten möchten. Wenn Sie Änderungen vorgenommen haben, setzen Sie sie nach Bedarf zurück. Wenn Sie einen lokalen PC als Lab-Umgebung verwenden, können Sie den Beispielprojektordner archivieren oder löschen, den Sie für diese Übung erstellt haben.
+Nachdem Sie die Übung abgeschlossen haben, nehmen Sie sich kurz Zeit, um sicherzustellen, dass Sie keine Änderungen an Ihrem GitHub-Konto oder GitHub Copilot-Abonnement vorgenommen haben, die Sie nicht beibehalten möchten. Wenn Sie Änderungen vorgenommen haben, setzen Sie sie nach Bedarf zurück. Wenn Sie einen lokalen PC als Lab-Umgebung verwenden, können Sie den Beispielprojektordner archivieren oder löschen, den Sie für diese Übung erstellt haben.

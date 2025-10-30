@@ -10,25 +10,25 @@ Die Leistungsprofilerstellung ist ein wichtiger Aspekt der Softwareentwicklung, 
 
 In dieser Übung überprüfen Sie ein vorhandenes Projekt, das schlechte Leistung und ineffizienten Code enthält, Analysieren Sie Ihre Optionen zur Verbesserung der Codeleistung, umgestalten Sie den Code, um die identifizierten Probleme zu beheben, und testen Sie den umgestalteten Code, um sicherzustellen, dass die Codeleistung verbessert wurde, während Funktionalität und Lesbarkeit beibehalten werden. Sie verwenden GitHub Copilot im Ask-Modus, um ein Verständnis für ein vorhandenes Codeprojekt zu erhalten und Optionen zur Umgestaltung der identifizierten Probleme zu untersuchen. Sie verwenden GitHub Copilot im Agent-Modus, um den Code umzugestalten und die Leistung zu verbessern. Sie testen den ursprünglichen und umgestalteten Code, um die Auswirkungen Ihrer Änderungen zu messen.
 
-Diese Übung dauert ca. **30** Minuten.
+Diese Übung dauert ca.**30** Minuten.
 
-> **WICHTIG:** Um diese Übung abzuschließen, müssen Sie Ihr eigenes GitHub-Konto und GitHub Copilot-Abonnement bereitstellen. Wenn Sie kein GitHub-Konto haben, können Sie sich für ein kostenloses eigenes Konto <a href="https://github.com/" target="_blank">registrieren</a> und einen GitHub Copilot Free-Plan verwenden, um die Übung abzuschließen. Wenn Sie Zugriff auf ein GitHub Copilot Pro-, GitHub Copilot Pro+-, GitHub Copilot Business- oder GitHub Copilot Enterprise-Abonnement in Ihrer Labumgebung haben, können Sie Ihr vorhandenes GitHub Copilot-Abonnement für diese Übung verwenden.
+> **WICHTIG:** Um diese Übung abzuschließen, müssen Sie Ihr eigenes GitHub-Konto und GitHub Copilot-Abonnement bereitstellen. Wenn Sie kein GitHub-Konto haben, können Sie sich für ein kostenloses eigenes Konto<a href="https://github.com/" target="_blank">registrieren</a> und einen GitHub Copilot Free-Plan verwenden, um die Übung abzuschließen. Wenn Sie Zugriff auf ein GitHub Copilot Pro-, GitHub Copilot Pro+-, GitHub Copilot Business- oder GitHub Copilot Enterprise-Abonnement in Ihrer Labumgebung haben, können Sie Ihr vorhandenes GitHub Copilot-Abonnement für diese Übung verwenden.
 
 ## Vor der Installation
 
-Ihre Labumgebung muss Folgendes enthalten: Git 2.48 oder höher, .NET SDK 9.0 oder höher, Visual Studio Code mit der C#Dev Kit-Erweiterung und Zugriff auf ein GitHub-Konto mit aktiviertem GitHub Copilot.
+Ihre Labumgebung muss die folgenden Ressourcen enthalten: Git 2.48 oder höher, .NET SDK 9.0 oder höher, Visual Studio Code mit der C#Dev Kit-Erweiterung und Zugriff auf ein GitHub-Konto mit aktiviertem GitHub Copilot.
 
 ### Konfigurieren der Laborumgebung
 
 Bei Nutzung eines lokalen PCs als Labumgebung für diese Übung:
 
-- Wenn Sie Hilfe beim Konfigurieren Ihres lokalen PCs als Labumgebung benötigen, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Konfigurieren Ihrer Labumgebungsressourcen</a>.
+- Wenn Sie Hilfe beim Konfigurieren Ihres lokalen PCs als Labumgebung benötigen, öffnen Sie den folgenden Link in einem Browser:<a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Konfigurieren Ihrer Labumgebungsressourcen</a>.
 
-- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
+- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, öffnen Sie den folgenden Link in einem Browser:<a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
 
 Bei Nutzung einer gehosteten Labumgebung für diese Übung:
 
-- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, fügen Sie die folgende URL in die Navigationsleiste eines Browsers ein: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
+- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, fügen Sie die folgende URL in die Navigationsleiste eines Browsers ein:<a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
 
 - So stellen Sie sicher, dass das .NET SDK für die Verwendung des offiziellen NuGet.org-Repositorys als Quelle zum Herunterladen und Wiederherstellen von Paketen konfiguriert ist:
 
@@ -46,29 +46,29 @@ Führen Sie die folgenden Schritte aus, um das Beispielprojekt herunterzuladen u
 
 1. Öffnen Sie ein Browserfenster in Ihrer Lab-Umgebung.
 
-1. Um eine ZIP-Datei mit den Beispiel-App-Projekten herunterzuladen, öffnen Sie die folgende URL in Ihrem Browser: [GitHub Copilot Lab – Implementieren von Leistungsprofilen](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/GHCopilotEx10LabApps.zip)
+1. Um eine ZIP-Datei mit den Beispiel-App-Projekten herunterzuladen, öffnen Sie die folgende URL in Ihrem Browser:[GitHub Copilot Lab – Implementieren von Leistungsprofilen](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/GHCopilotEx10LabApps.zip)
 
-    Die ZIP-Datei heißt **GHCopilotEx10LabApps.zip**.
+    Die ZIP-Datei heißt**GHCopilotEx10LabApps.zip**.
 
-1. Extrahieren Sie die Dateien aus der **GHCopilotEx10LabApps.zip** Datei.
+1. Extrahieren Sie die Dateien aus der**GHCopilotEx10LabApps.zip** Datei.
 
     Zum Beispiel:
 
     1. Navigieren Sie zu dem Ordner "Downloads" in Ihrer Lab-Umgebung.
 
-    1. Klicken Sie mit der rechten Maustaste auf **GHCopilotEx10LabApps.zip**, und wählen Sie **dann "Alle**extrahieren" aus.
+    1. Klicken Sie mit der rechten Maustaste auf**GHCopilotEx10LabApps.zip**, und wählen Sie**dann "Alle**extrahieren" aus.
 
-    1. Wählen Sie **Dateien nach Extrahierung anzeigen** und dann **Extrahieren** aus.
+    1. Wählen Sie**Dateien nach Extrahierung anzeigen** und dann**Extrahieren** aus.
 
-1. Kopieren Sie den **Ordner GHCopilotEx10LabApps** an einen Speicherort, auf den sie leicht zugreifen können, z. B. Ihren Windows-Desktopordner.
+1. Kopieren Sie den**Ordner GHCopilotEx10LabApps** an einen Speicherort, auf den sie leicht zugreifen können, z. B. Ihren Windows-Desktopordner.
 
-1. Öffnen Sie den **Ordner GHCopilotEx10LabApps** in Visual Studio Code.
+1. Öffnen Sie den**Ordner GHCopilotEx10LabApps** in Visual Studio Code.
 
     Zum Beispiel:
 
     1. Öffnen Sie Visual Studio Code in Ihrer Lab-Umgebung.
 
-    1. Wählen Sie in Visual Studio Code im Menü **Datei** die Option **Ordner öffnen** aus.
+    1. Wählen Sie in Visual Studio Code im Menü**Datei** die Option**Ordner öffnen** aus.
 
     1. Navigieren Sie zum Ordner "Windows Desktop", wählen Sie **"GHCopilotEx10LabApps** " und dann "Ordner auswählen **"** aus.
 
@@ -104,9 +104,9 @@ Führen Sie die folgenden Schritte aus, um das Beispielprojekt herunterzuladen u
 
 ## Übungsszenario
 
-Sie sind Softwareentwickler, die für eine Beratungsfirma arbeiten. Ihre Clients benötigen Hilfe bei der Implementierung von Leistungsprofilen in älteren Anwendungen. Ihr Ziel ist es, die Codeleistung zu verbessern und gleichzeitig die Lesbarkeit und die vorhandene Funktionalität zu erhalten. Sie werden der folgenden App zugewiesen:
+Sie sind Softwareentwickler, die für eine Beratungsfirma arbeiten. Ihre Kunden benötigen Hilfe bei der Implementierung einer Leistungsprofilerstellung in älteren Anwendungen. Ihr Ziel ist es, die Codeleistung zu verbessern und gleichzeitig die Lesbarkeit und die vorhandene Funktionalität zu erhalten. Sie werden der folgenden App zugewiesen:
 
-- ContosoOnlineStore: Dies ist eine E-Commerce-Anwendung, die Kundenaufträge verarbeitet. Die Anwendung umfasst produktkatalogverwaltung mit Suchfunktionen, Bestandsverfolgung mit Bestandsreservierungen, Auftragsverarbeitung mit Validierung und Bestätigungen, E-Mail-Benachrichtigungsdienste und Sicherheitsüberprüfung. Die Anwendung verwendet moderne .NET-Architekturmuster, einschließlich Abhängigkeitseinfügung, strukturierter Protokollierung und Konfigurationsverwaltung, enthält jedoch Leistungsengpässe, die reale Szenarien spiegeln.
+- ContosoOnlineStore: ContosoOnlineStore ist eine E-Commerce-Anwendung, die Kundenaufträge verarbeitet. Die Anwendung umfasst produktkatalogverwaltung mit Suchfunktionen, Bestandsverfolgung mit Bestandsreservierungen, Auftragsverarbeitung mit Validierung und Bestätigungen, E-Mail-Benachrichtigungsdienste und Sicherheitsüberprüfung. Die Anwendung verwendet moderne .NET-Architekturmuster, einschließlich Abhängigkeitseinfügung, strukturierter Protokollierung und Konfigurationsverwaltung, enthält jedoch Leistungsengpässe, die reale Szenarien spiegeln.
 
 > **HINWEIS:** Codeengpässe umfassen absichtliche Ineffizienzen und Leistungsprobleme sowie simulierte Verzögerungen, die die reale zeitliche Steuerung für externe Abhängigkeiten annähernd widerspiegeln. Simulierte Verzögerungen sollten beibehalten werden, wenn der Code umgestaltet wird, um Vorher/nachher-Leistungsvergleiche zu ermöglichen.
 
@@ -121,7 +121,7 @@ Diese Übung umfasst die folgenden Aufgaben:
 
 Der erste Schritt bei der Codeumgestaltung besteht darin, die vorhandene Codebasis zu verstehen, einschließlich der Projektstruktur und Geschäftslogik. Wenn Sie an Leistungsverbesserungen arbeiten, ist es auch wichtig, grundlegende Leistungsmetriken einzurichten.
 
-In dieser Aufgabe untersuchen Sie die Hauptkomponenten des ContosoOnlineStore-Projekts, führen die Anwendung aus, um grundlegende Leistungsmetriken einzurichten und potenzielle Bereiche für die Optimierung zu identifizieren.
+In dieser Aufgabe untersuchen Sie die Hauptkomponenten des ContosoOnlineStore-Projekts, führen die Anwendung aus, um grundlegende Leistungsmetriken einzurichten, und identifizieren potenzielle Bereiche für die Optimierung.
 
 Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
@@ -129,13 +129,13 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
     Die Codebasis folgt modernen NET Architekturmustern mit klarer Trennung von Bedenken. Zu den wichtigsten Architekturkomponenten gehören:
 
-    - **Konfiguration:** Stark typierte Konfiguration mit Überprüfung
+    - **Konfiguration:** Stark typisierte Konfiguration mit Überprüfung
     - **Dienste:** Geschäftsdienste mit Schnittstellen zur Testbarkeit  
     - **Ausnahmen:** Benutzerdefinierte domänenspezifische Ausnahmen
     - **Benchmarks**: Professionelle Leistungstests mit BenchmarkDotNet
     - **Tests**: Komponententests mit Mocking-Framework
 
-1. Nehmen Sie sich ein paar Minuten Zeit, um die Klassen **ProductCatalog.cs**, **OrderProcessor.cs** und **InventoryManager.cs** zu überprüfen.
+1. Nehmen Sie sich ein paar Minuten Zeit, um die Klassen**ProductCatalog.cs**,**OrderProcessor.cs** und**InventoryManager.cs** zu überprüfen.
 
     Diese Klassen enthalten die Hauptgeschäftslogik und sind wahrscheinlich Kandidaten für die Leistungsoptimierung.
 
@@ -147,15 +147,15 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
     - **InventoryManager.cs**: Die InventoryManager-Klasse verwaltet Lagerbestände, Reservierungen und Warnmeldungen bei niedrigen Lagerbeständen.
 
-1. Erweitern Sie die Ordner **Dienste** und **Konfiguration**.
+1. Erweitern Sie die Ordner**Dienste** und**Konfiguration**.
 
     Diese Ordner enthalten zusätzliche Geschäftslogik und Konfigurationseinstellungen, die die Hauptanwendungsfunktionalität unterstützen.
 
-1. Nehmen Sie sich ein paar Minuten Zeit, um die Dateien **Program.cs** und **AppSettings.cs** zu überprüfen.
+1. Nehmen Sie sich ein paar Minuten Zeit, um die Dateien**Program.cs** und**AppSettings.cs** zu überprüfen.
 
     Untersuchen Sie die Beziehung zwischen den Dateien „Program.cs“ und „AppSettings.cs“. Beachten Sie, dass die Datei „Program.cs“ initialisiert wird und die AppSettings-Konfiguration in die Dienste der Anwendung einfügt. Damit wird eine zentrale und flexible Kontrolle über das Anwendungsverhalten ermöglicht. Die Anwendungskonfiguration ist stark typisiert und wird beim Start überprüft, um sicherzustellen, dass alle erforderlichen Einstellungen vorhanden und ordnungsgemäß formatiert sind.
 
-1. Nehmen Sie sich ein paar Minuten Zeit, um die Dateien **EmailService.cs** und **SecurityValidationService.cs** zu überprüfen.
+1. Nehmen Sie sich ein paar Minuten Zeit, um die Dateien**EmailService.cs** und**SecurityValidationService.cs** zu überprüfen.
 
     Untersuchen Sie die Implementierung dieser Dienste. Beachten Sie, dass sie Geschäftslogik mit konfigurierbaren Timeouts, Sicherheitsüberprüfungsregeln und E-Mail-Benachrichtigungsworkflows bereitstellen. Die Dienste verwenden Abhängigkeitsinjektion und Protokollierung, die folgenden Unternehmensentwicklungsmustern folgen.
 
@@ -175,13 +175,13 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     - Testen gleichzeitiger Vorgänge
     - Simulation von E-Mail-Benachrichtigungen
 
-1. Speichern Sie die grundlegenden Leistungsmetriken in einer Datei namens **baseline_metrics.txt**.
+1. Speichern Sie die grundlegenden Leistungsmetriken in einer Datei namens**baseline_metrics.txt**.
 
     Verwenden Sie die EXPLORER-Ansicht, um eine Textdatei namens „baseline_metrics.txt“ im Ordner „Benchmarks“ zu erstellen, und kopieren Sie dann die Konsolenausgabe in die Datei „baseline_metrics.txt“.
 
 1. Überprüfen Sie die Datei „baseline_metrics.txt“.
 
-    Beachten Sie die Zeitsteuerungsinformationen im Abschnitt *Ausführen der Leistungsanalyse*. Zu den wichtigsten Leistungsmetriken gehören folgende:
+    Beachten Sie die Zeitsteuerungsinformationen im Abschnitt*Ausführen der Leistungsanalyse*. Zu den wichtigsten Leistungsmetriken gehören folgende:
 
     - Leistung bei der Produktsuche
     - Suchleistung
@@ -211,9 +211,9 @@ In dieser Aufgabe verwenden Sie GitHub Copilot, um die ContosoOnlineStore-Anwend
 
 Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
-1. Öffnen Sie die GitHub Copilot Chat-Ansicht, und konfigurieren Sie dann den **Fragemodus** und das **GPT-4o**-Modell.
+1. Öffnen Sie die GitHub Copilot Chat-Ansicht, und konfigurieren Sie dann den**Fragemodus** und das**GPT-4o**-Modell.
 
-    Um die Chatansicht zu öffnen, wählen Sie oben im Fenster von Visual Studio Code das Symbol **Chat umschalten** aus.
+    Um die Chatansicht zu öffnen, wählen Sie oben im Fenster von Visual Studio Code das Symbol**Chat umschalten** aus.
 
     > **HINWEIS:** Das GPT-4o-Modell bietet hervorragende Codeanalysefunktionen und ist im GitHub Copilot Free-Plan enthalten. Die Auswahl eines anderen Modells kann zu unterschiedlichen Ergebnissen führen.
 
@@ -221,9 +221,9 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
     GitHub Copilot verwendet Dateien, die im Editor geöffnet sind, um den Kontext herzustellen. Wenn nur die Zieldateien geöffnet sind, können Sie die Analyse auf den Code konzentrieren, den Sie optimieren möchten.
 
-1. Fügen Sie die **Dateien InventoryManager.cs**, **OrderProcessor.cs**und **ProductCatalog.cs** zum Chatkontext hinzu.
+1. Fügen Sie die**Dateien InventoryManager.cs**,**OrderProcessor.cs**und**ProductCatalog.cs** zum Chatkontext hinzu.
 
-    Verwenden Sie einen Drag-and-Drop-Vorgang, um InventoryManager.cs **, **OrderProcessor.cs** und **ProductCatalog.cs** aus dem PROJEKTMAPPEn-EXPLORER zum Chatkontext hinzuzufügen**.
+    Verwenden Sie einen Drag-and-Drop-Vorgang, um InventoryManager.cs **,** OrderProcessor.cs** und**ProductCatalog.cs** aus dem PROJEKTMAPPEn-EXPLORER zum Chatkontext hinzuzufügen**.
 
     Das Hinzufügen von Dateien zum Chatkontext weist GitHub Copilot an, diese Dateien beim Analysieren Ihrer Eingabeaufforderungen einzuschließen, wodurch die Genauigkeit und Relevanz der Analyse verbessert werden.
 
@@ -347,15 +347,15 @@ Der Agent-Modus von GitHub Copilot bietet einen autonomen Agent, der programmier
 
 Im Agentmodus kann GitHub Copilot optimierte Codeimplementierungen generieren, Architekturverbesserungen vorschlagen und Leistungsverbesserungen implementieren.
 
-In dieser Aufgabe verwenden Sie den GitHub Copilot Agent-Modus, um die in der vorherigen Aufgabe identifizierten Leistungsengpässe systematisch zu beheben.
+In dieser Aufgabe verwenden Sie den Agent-Modus von GitHub Copilot, um die in der vorherigen Aufgabe identifizierten Leistungsengpässe systematisch zu beheben.
 
 Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
 1. Konfigurieren des GitHub Copilot-Chats für den Agent-Modus.
 
-    Ändern Sie in der Chatansicht den Modus von **An** Agent** bitten**. Der Agentmodus bietet gezieltere Codegenerierungs- und Änderungsfunktionen.
+    Ändern Sie in der Chatansicht den Modus von**An** Agent** bitten**. Der Agentmodus bietet gezieltere Codegenerierungs- und Änderungsfunktionen.
 
-1. Öffnen Sie die Datei **ProductCatalog.cs**, und wählen Sie dann die Methode **GetProductById** aus.
+1. Öffnen Sie die Datei**ProductCatalog.cs**, und wählen Sie dann die Methode**GetProductById** aus.
 
 1. Weisen Sie dem Agent, der die GetProductById-Methode optimiert, eine Aufgabe zu.
 
@@ -373,11 +373,11 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     - Richtige Cacheinitialisierung und -verwaltung.
     - Reduzierte redundante Vorgänge.
 
-    Sie können einzelne Bearbeitungen im Code-Editor überprüfen und annehmen (oder ablehnen), oder Sie können alle Änderungen auf einmal annehmen, indem Sie in der Chatansicht **Beibehalten** auswählen.
+    Sie können einzelne Bearbeitungen im Code-Editor überprüfen und annehmen (oder ablehnen), oder Sie können alle Änderungen auf einmal annehmen, indem Sie in der Chatansicht**Beibehalten** auswählen.
 
     > **HINWEIS:** Berücksichtigen Sie beim Abschließen dieses Abschnitts der Übung die Sicherheitsrisiken und andere Probleme, die in der vorherigen Aufgabe identifiziert wurden. Fachkräfte in der Entwicklung sollten sicherstellen, dass während des Optimierungsprozesses keine neuen Sicherheitsrisiken eingeführt werden. In einer Produktionsumgebung sollten manuelle Reviews, Sicherheitsüberprüfungen und Tests Teil Ihres Prozesses sein.
 
-1. Wählen Sie im Code-Editor die Methode **SearchProducts** aus.
+1. Wählen Sie im Code-Editor die Methode**SearchProducts** aus.
 
 1. Weisen Sie dem Agent eine Aufgabe zu, die die Effizienz der SearchProducts-Methode verbessert.
 
@@ -395,9 +395,9 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     - Parallele Verarbeitung für mehrere Suchkriterien.
     - Optimierte Cacheschlüsselgenerierung.
 
-1. Speichern Sie die Datei **ProductCatalog.cs**, und schließen Sie sie.
+1. Speichern Sie die Datei**ProductCatalog.cs**, und schließen Sie sie.
 
-1. Öffnen Sie die Datei **OrderProcessor.cs**, und wählen Sie dann die Methode **CalculateOrderTotal** aus.
+1. Öffnen Sie die Datei**OrderProcessor.cs**, und wählen Sie dann die Methode**CalculateOrderTotal** aus.
 
 1. Weisen Sie dem Agent, der die Leistung der CalculateOrderTotal-Methode verbessert, eine Aufgabe zu.
 
@@ -415,7 +415,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     - Zwischengespeicherte Produktinformationen während der Auftragsverarbeitung.
     - Optimierte Steuer- und Versandberechnungen.
 
-1. Wählen Sie im Code-Editor die Methode **FinalizeOrderAsync** aus.
+1. Wählen Sie im Code-Editor die Methode**FinalizeOrderAsync** aus.
 
 1. Weisen Sie dem Agent, der die Leistung der FinalizeOrderAsync-Methode verbessert, eine Aufgabe zu.
 
@@ -433,9 +433,9 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     - Optimierte asynchrone/await-Nutzung
     - Bessere Ausnahmebehandlung in asynchronen Kontexten
 
-1. Speichern Sie die Datei **OrderProcessor.cs**, und schließen Sie sie.
+1. Speichern Sie die Datei**OrderProcessor.cs**, und schließen Sie sie.
 
-1. Öffnen Sie die Datei **InventoryManager.cs**, und wählen Sie dann die Methode **UpdateStockLevels** aus.
+1. Öffnen Sie die Datei**InventoryManager.cs**, und wählen Sie dann die Methode**UpdateStockLevels** aus.
 
 1. Weisen Sie dem Agent, der die Leistung der UpdateStockLevels-Methode verbessert, eine Aufgabe zu.
 
@@ -453,9 +453,9 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     - Effiziente Protokollierungsstrategien
     - Reduzierte Blockierungsvorgänge
 
-1. Speichern Sie die Datei **OrderProcessor.cs**, und schließen Sie sie.
+1. Speichern Sie die Datei**OrderProcessor.cs**, und schließen Sie sie.
 
-1. Öffnen Sie die Datei **EmailService.cs**.
+1. Öffnen Sie die Datei**EmailService.cs**.
 
 1. Weisen Sie dem Agent, der die Leistung der Methoden zum Senden von E-Mails verbessert, eine Aufgabe zu.
 
@@ -501,7 +501,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     dotnet run
     ```
 
-1. Speichern Sie die neuen Leistungsmetriken in einer Datei namens **optimized_metrics.txt**.
+1. Speichern Sie die neuen Leistungsmetriken in einer Datei namens**optimized_metrics.txt**.
 
     Verwenden Sie die EXPLORER-Ansicht, um eine Textdatei namens „optimized_metrics.txt“ im Ordner „Benchmarks“ zu erstellen, und kopieren Sie dann die Konsolenausgabe in die Datei „optimized_metrics.txt“.
 
@@ -523,7 +523,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
 1. Erstellen Sie das Komponententestprojekt, und führen Sie es aus.
 
-    Navigieren Sie beispielsweise im Visual Studio Code-Terminal zum Ordner **ContosoOnlineStore.Tests**, und führen Sie den folgenden Befehl aus:
+    Navigieren Sie beispielsweise im Visual Studio Code-Terminal zum Ordner**ContosoOnlineStore.Tests**, und führen Sie den folgenden Befehl aus:
 
     ```bash
     dotnet test

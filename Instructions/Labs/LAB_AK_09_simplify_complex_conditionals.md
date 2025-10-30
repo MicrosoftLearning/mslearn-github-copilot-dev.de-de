@@ -10,25 +10,25 @@ Die bedingte Logik in Geschäftsanwendungen wird oft komplexer und tief verschac
 
 In dieser Übung verwenden Sie GitHub Copilot, um Code mit tief verschachtelter Logik zu analysieren, die Codelogik umzugestalten und dann den umgestalteten Code zu testen und so sicherzustellen, dass er wie beabsichtigt funktioniert. Sie verwenden GitHub Copilot im Fragemodus, um ein Verständnis des Codes zu erhalten und Optionen zu erkunden, die die Logik vereinfachen. Sie verwenden GitHub Copilot im Agent-Modus, um den Code umzugestalten, indem Sie komplexe bedingte Logik in kleinere, fokussierte Hilfsmethoden extrahieren und die Schachtelung reduzieren. Die Vereinfachung komplexer Bedingungen erleichtert das Lesen, Warten und Testen des Codes.
 
-Diese Übung dauert ca. **30** Minuten.
+Diese Übung dauert ca.**30** Minuten.
 
-> **WICHTIG:** Um diese Übung abzuschließen, benötigen Sie ein eigenes GitHub-Konto und ein GitHub Copilot-Abonnement. Falls Sie kein GitHub-Konto haben, können Sie sich für ein kostenloses Einzelkonto <a href="https://github.com/" target="_blank">registrieren</a> und den GitHub Copilot Free-Plan verwenden, um die Übung abzuschließen. Wenn Sie Zugriff auf ein GitHub Copilot Pro-, GitHub Copilot Pro+-, GitHub Copilot Business- oder GitHub Copilot Enterprise-Abonnement in Ihrer Labumgebung haben, können Sie Ihr vorhandenes GitHub Copilot-Abonnement für diese Übung verwenden.
+> **WICHTIG:** Um diese Übung abzuschließen, müssen Sie Ihr eigenes GitHub-Konto und GitHub Copilot-Abonnement bereitstellen. Wenn Sie kein GitHub-Konto haben, können Sie sich für ein kostenloses eigenes Konto<a href="https://github.com/" target="_blank">registrieren</a> und einen GitHub Copilot Free-Plan verwenden, um die Übung abzuschließen. Wenn Sie Zugriff auf ein GitHub Copilot Pro-, GitHub Copilot Pro+-, GitHub Copilot Business- oder GitHub Copilot Enterprise-Abonnement in Ihrer Labumgebung haben, können Sie Ihr vorhandenes GitHub Copilot-Abonnement für diese Übung verwenden.
 
 ## Vor der Installation
 
-Ihre Übungsumgebung muss die folgenden Voraussetzungen erfüllen: Git 2.48 oder höher, .NET SDK 9.0 oder höher, Visual Studio Code mit der C# -Dev-Kit-Erweiterung und Zugriff auf ein GitHub-Konto mit aktiviertem GitHub Copilot.
+Ihre Labumgebung muss Folgendes enthalten: Git 2.48 oder höher, .NET SDK 9.0 oder höher, Visual Studio Code mit der C#Dev Kit-Erweiterung und Zugriff auf ein GitHub-Konto mit aktiviertem GitHub Copilot.
 
 ### Konfigurieren der Laborumgebung
 
-Wenn Sie einen lokalen PC als Übungsumgebung für diese Übung verwenden, gilt Folgendes:
+Bei Nutzung eines lokalen PCs als Labumgebung für diese Übung:
 
-- Wenn Sie Hilfe beim Konfigurieren Ihres lokalen PCs als Labumgebung benötigen, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Konfigurieren der Ressourcen für Ihre Labumgebung</a>.
+- Wenn Sie Hilfe beim Konfigurieren Ihres lokalen PCs als Labumgebung benötigen, öffnen Sie den folgenden Link in einem Browser:<a href="https://go.microsoft.com/fwlink/?linkid=2320147" target="_blank">Konfigurieren Ihrer Labumgebungsressourcen</a>.
 
-- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, öffnen Sie den folgenden Link in einem Browser: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
+- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, öffnen Sie den folgenden Link in einem Browser:<a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
 
-Wenn Sie eine gehostete Labumgebung für diese Übung verwenden, gilt Folgendes:
+Bei Nutzung einer gehosteten Labumgebung für diese Übung:
 
-- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, fügen Sie den folgenden Link in die Navigationsleiste eines Browsers ein: <a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
+- Wenn Sie Hilfe beim Aktivieren Ihres GitHub Copilot-Abonnements in Visual Studio Code benötigen, fügen Sie die folgende URL in die Navigationsleiste eines Browsers ein:<a href="https://go.microsoft.com/fwlink/?linkid=2320158" target="_blank">Aktivieren von GitHub Copilot in Visual Studio Code</a>.
 
 - So stellen Sie sicher, dass das .NET SDK für die Verwendung des offiziellen NuGet.org-Repositorys als Quelle zum Herunterladen und Wiederherstellen von Paketen konfiguriert ist:
 
@@ -46,31 +46,31 @@ Führen Sie die folgenden Schritte aus, um die Beispielprojekte herunterzuladen 
 
 1. Öffnen Sie ein Browserfenster in Ihrer Übungsumgebung.
 
-1. Um eine ZIP-Datei mit den Beispiel-App-Projekten herunterzuladen, öffnen Sie die folgende URL in Ihrem Browser: [GitHub Copilot-Übung – Entwickeln von Codefeatures](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/GHCopilotEx9LabApps.zip)
+1. Um eine ZIP-Datei mit den Beispiel-App-Projekten herunterzuladen, öffnen Sie die folgende URL in Ihrem Browser:[GitHub Copilot-Übung – Entwickeln von Codefeatures](https://github.com/MicrosoftLearning/mslearn-github-copilot-dev/raw/refs/heads/main/DownloadableCodeProjects/Downloads/GHCopilotEx9LabApps.zip)
 
-    Die ZIP-Datei heißt **GHCopilotEx9LabApps.zip**.
+    Die ZIP-Datei heißt**GHCopilotEx9LabApps.zip**.
 
-1. Extrahieren Sie die Dateien aus der Datei **GHCopilotEx9LabApps.zip**.
+1. Extrahieren Sie die Dateien aus der Datei**GHCopilotEx9LabApps.zip**.
 
     Zum Beispiel:
 
     1. Navigieren Sie zu dem Ordner mit Downloads in Ihrer Übungsumgebung.
 
-    1. Klicken Sie mit der rechten Maustaste auf *GHCopilotEx9LabApps.zip* und wählen Sie dann **Alle extrahieren** aus.
+    1. Klicken Sie mit der rechten Maustaste auf**GHCopilotEx9LabApps.zip** und wählen Sie dann**Alle extrahieren** aus.
 
-    1. Wählen Sie **Dateien nach Extrahierung anzeigen** und dann **Extrahieren** aus.
+    1. Wählen Sie**Dateien nach Extrahierung anzeigen** und dann**Extrahieren** aus.
 
-1. Kopieren Sie den Ordner **GHCopilotEx9LabApps** an einen leicht zugänglichen Speicherort, z. B. Ihren Windows-Ordner „Desktop“.
+1. Kopieren Sie den Ordner**GHCopilotEx9LabApps** an einen leicht zugänglichen Speicherort, z. B. Ihren Windows-Ordner „Desktop“.
 
-1. Öffnen Sie den Ordner **GHCopilotEx9LabApps** in Visual Studio Code.
+1. Öffnen Sie den Ordner**GHCopilotEx9LabApps** in Visual Studio Code.
 
     Zum Beispiel:
 
-    1. Öffnen Sie Visual Studio Code in Ihrer Übungsumgebung.
+    1. Öffnen Sie Visual Studio Code in Ihrer Lab-Umgebung.
 
-    1. Wählen Sie in Visual Studio Code im Menü **Datei** die Option **Ordner öffnen** aus.
+    1. Wählen Sie in Visual Studio Code im Menü**Datei** die Option**Ordner öffnen** aus.
 
-    1. Navigieren Sie zum Windows-Ordner „Desktop“, und wählen Sie **GHCopilotEx9LabApps** und dann **Ordner auswählen** aus.
+    1. Navigieren Sie zum Windows-Ordner „Desktop“, und wählen Sie**GHCopilotEx9LabApps** und dann**Ordner auswählen** aus.
 
 1. Überprüfen Sie in der PROJEKTMAPPEN-EXPLORER-Ansicht von Visual Studio Code die folgende Lösungstruktur:
 
@@ -88,7 +88,7 @@ Führen Sie die folgenden Schritte aus, um die Beispielprojekte herunterzuladen 
 
 ## Übungsszenario
 
-Sie sind Softwareentwicklerin bzw. Softwareentwickler und arbeiten für eine Beratungsfirma. Ihre Kundschaften benötigen Hilfe beim Umgestalten komplexer bedingter Logik, um die Lesbarkeit und Wartung von Code zu verbessern. Sie werden den folgenden Apps zugewiesen:
+Sie sind Softwareentwickler, die für eine Beratungsfirma arbeiten. Ihre Kunden benötigen Hilfe beim Umgestalten komplexer bedingter Logik, um die Lesbarkeit und Wartung von Code zu verbessern. Sie werden den folgenden Apps zugewiesen:
 
 - E-Commerce-Preismodul: Die erste App ist ein E-Commerce-Preismodul, das dynamische Preise basierend auf verschiedenen Geschäftsregeln berechnet. Bedingungen umfassen Mitgliedschaftsstufen, Bestellwerte, Coupon-Codes, Produktkategorien und Versandregeln.
 - Workflow zur Genehmigung von Krediten: Die zweite App ist ein Workflow zur Genehmigung von Krediten, der Kreditanträge basierend auf verschiedenen Faktoren auswertet. Zu den Bedingungen gehören Einkommen, Beschäftigungsstatus, Schuldenquote, Sicherheiten und Kredithistorie.
@@ -105,34 +105,34 @@ Diese Übung umfasst die folgenden Aufgaben:
 
 Der erste Schritt bei jeder Umgestaltung besteht darin, sicherzustellen, dass Sie die vorhandene Codebasis verstehen.
 
-In dieser Aufgabe öffnen Sie das E-Commerce-Preismodul-Projekt und verwenden GitHub Copilot, um die komplexe bedingte Logik zu analysieren.
+In dieser Aufgabe öffnen Sie das Projekt für das E-Commerce-Preismodul und verwenden GitHub Copilot, um die komplexe bedingte Logik zu analysieren.
 
 Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
 1. Stellen Sie sicher, dass der Ordner „GHCopilotEx9LabApps“ in Visual Studio Code geöffnet ist.
 
-    Lesen Sie den Abschnitt **Vorbereitung**, wenn Sie die Beispielcodeprojekte nicht heruntergeladen haben.
+    Lesen Sie den Abschnitt**Vorbereitung**, wenn Sie die Beispielcodeprojekte nicht heruntergeladen haben.
 
-1. Überprüfen Sie, ob das Codeprojekt **ECommercePricingEngine** erfolgreich erstellt wird.
+1. Überprüfen Sie, ob das Codeprojekt**ECommercePricingEngine** erfolgreich erstellt wird.
 
-    Klicken Sie beispielsweise in der PROJEKTMAPPEN-EXPLORER-Ansicht mit der rechten Maustaste auf **ECommercePricingEngine** und wählen Sie dann **Erstellen** aus.
+    Klicken Sie beispielsweise in der PROJEKTMAPPEN-EXPLORER-Ansicht mit der rechten Maustaste auf**ECommercePricingEngine** und wählen Sie dann**Erstellen** aus.
 
     Es werden Warnungen angezeigt: „Cannot convert null literal to non-nullable reference type.“, wenn Sie das Projekt erstellen, aber es sollten keine Fehler auftreten. Sie können die Warnungen im Rahmen dieser Übung ignorieren.
 
 1. Öffnen Sie die Chat-Ansicht von GitHub Copilot.
 
-    Wenn die Chat-Ansicht noch nicht geöffnet ist, können Sie sie öffnen, indem Sie das **Chatsymbol** oben im Visual Studio Code-Fenster rechts neben dem Suchtextfeld auswählen.
+    Wenn die Chat-Ansicht noch nicht geöffnet ist, können Sie sie öffnen, indem Sie das**Chatsymbol** oben im Visual Studio Code-Fenster rechts neben dem Suchtextfeld auswählen.
 
-1. Stellen Sie in der Chat-ansicht sicher, dass der Chat-Modus auf **Fragemodus** festgelegt ist und das Modell auf **GPT-4.1**.
+1. Stellen Sie in der Chat-ansicht sicher, dass der Chat-Modus auf**Fragemodus** festgelegt ist und das Modell auf**GPT-4.1**.
 
-    Diese Einstellungen sind in der unteren linken Ecke der Chat-Ansicht verfügbar. Der **Fragemodus** von GitHub Copilot wird verwendet, um allgemeine Codierungsfragen zu stellen und codebezogene Erklärungen zu generieren. Das Modell **GPT-4.1**, das im GitHub Copilot Free-Plan enthalten ist, ist eine gute Wahl für Codeanalyse, Erklärungen und Anleitungen im Zusammenhang mit der Codeumgestaltung.
+    Diese Einstellungen sind in der unteren linken Ecke der Chat-Ansicht verfügbar. Der**Fragemodus** von GitHub Copilot wird verwendet, um allgemeine Codierungsfragen zu stellen und codebezogene Erklärungen zu generieren. Das Modell**GPT-4.1**, das im GitHub Copilot Free-Plan enthalten ist, ist eine gute Wahl für Codeanalyse, Erklärungen und Anleitungen im Zusammenhang mit der Codeumgestaltung.
 
-    Sie verwenden den **Agent-Modus** von GitHub Copilot später in dieser Übung, aber jetzt verwenden Sie den **Fragemodus** für Codeanalyse und Erklärungen.
+    Sie verwenden den**Agent-Modus** von GitHub Copilot später in dieser Übung. Vorläufig verwenden Sie jedoch den**Fragemodus** für Codeanalyse und Erklärungen.
 
     > [!NOTE]
     > Einige Modelle eignen sich besser für bestimmte Aufgaben als andere. Das ausgewählte Modell kann sich auf die von GitHub Copilot generierten Antworten auswirken. Nachdem Sie diese Übung mit den empfohlenen Einstellungen abgeschlossen haben, sollten Sie die Übung mit verschiedenen Modellen wiederholen und die Ergebnisse vergleichen.
 
-1. Öffnen Sie die Datei **ECommercePricingDemo.cs** in Visual Studio Code.
+1. Öffnen Sie die Datei**ECommercePricingDemo.cs** in Visual Studio Code.
 
     Diese Datei enthält die folgenden Klassen:
 
@@ -145,15 +145,15 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
     Jede Klasse modelliert eine reale Entität oder einen Prozess in einem E-Commerce-Preissystem und interagiert in der Klasse „Programm“, um Preisberechnungen zu simulieren und zu testen. Beispielsweise werden die Instanzen „User“, „Order“ und „Coupon“ an „PricingEngine.CalculateFinalPrice“ übergeben, um den Endpreis mit allen anwendbaren Rabatten zu berechnen und anzuzeigen.
 
-1. Suchen Sie die Klasse **PricingEngine** und wählen Sie dann die gesamte Methode **CalculateFinalPrice** aus.
+1. Suchen Sie die Klasse**PricingEngine** und wählen Sie dann die gesamte Methode**CalculateFinalPrice** aus.
 
     Die Methode „CalculateFinalPrice“ enthält komplexe und tief verschachtelte bedingte Logik, die Mitgliedschaftsstufen, saisonale Ereignisse, Unternehmenskonten, Abonnementdienste und verschiedene Rabattszenarien auswertet.
 
-1. Nehmen Sie sich eine Minute Zeit, um durch die bedingte Logik in der Methode **CalculateFinalPrice** zu scrollen.
+1. Nehmen Sie sich eine Minute Zeit, um durch die bedingte Logik in der Methode**CalculateFinalPrice** zu scrollen.
 
     Die Methode ist komplex und schwer zu lesen, mit mehreren verschachtelten Bedingungen, die verschiedene Rabattszenarien behandeln. Die Komplexität ergibt sich aus den verschiedenen Geschäftsregeln, die basierend auf Benutzerstatus, Auftragsdetails und Coupon-Codes angewendet werden müssen.
 
-1. Klicken Sie mit der rechten Maustaste auf den ausgewählten Code, und wählen Sie dann **Copilot** > **Erklären** aus.
+1. Klicken Sie mit der rechten Maustaste auf den ausgewählten Code, und wählen Sie dann**Copilot** >**Erklären** aus.
 
     GitHub Copilot analysiert die Methode „CalculateFinalPrice“ und bietet eine detaillierte Erläuterung der Funktionsweise des Codes.
 
@@ -252,9 +252,9 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
     For more details, see the full implementation in ECommercePricingDemo.cs, especially the `ECommercePricing.PricingEngine.CalculateFinalPrice` method.
     ```
 
-1. Vergleichen Sie die Erklärung von GitHub Copilot mit Ihren eigenen Beobachtungen der komplexen bedingten Logik in der Methode `CalculateFinalPrice`.
+1. Vergleichen Sie die Erklärung von GitHub Copilot mit Ihren eigenen Beobachtungen der komplexen bedingten Logik in der Methode`CalculateFinalPrice`.
 
-    Sie können die wichtigsten Rabattquellen: Mitgliedschaftsstufen, Coupon-Codes und Massenkaufanreize wahrscheinlich selbst identifizieren. Die Erklärung von GitHub Copilot sollte Ihre Beobachtungen unterstützen und zusätzliche Einblicke darüber liefern, wie diese Rabattpfade interagieren, sowie über die wichtigsten Geschäftsregeln, die die Preisberechnungen steuern.
+    Sie können die wichtigsten Rabattquellen: Mitgliedschaftsstufen, Coupon-Codes und Massenkaufanreize wahrscheinlich selbst identifizieren. Die Erklärung von GitHub Copilot sollte Ihre Beobachtungen unterstützen und weitere Einblicke darüber bieten, wie diese Rabattpfade interagieren, sowie über die wichtigsten Geschäftsregeln, die die Preisberechnungen steuern.
 
     - Beachten Sie, wie Rabatte für die verschiedenen Mitgliedschaftsstufen (Premium, Gold, Silver) funktionieren und wie Personen, die zum ersten Mal etwas kaufen, behandelt werden.
     - Beachten Sie, wie die Coupon-Überprüfung ausgewertet und angewendet wird und wie Coupon-Rabatte mit Mitgliedschaftsrabatten interagieren.
@@ -266,12 +266,12 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
     Die Ausgabe sollte die grundlegenden und ermäßigten Preise für verschiedene Kombinationen von Benutzenden, Bestellungen und Coupons anzeigen. Am Ende dieser Übung muss Ihr umgestalteter Code dieselben Ergebnisse wie der ursprüngliche Code generieren.
 
-    Möglicherweise haben Sie bemerkt, dass die Ausgabe grundlegende Sicherheitstests für ungültige Eingaben und böswillige Versuche zur Manipulation der Preise enthält. Obwohl diese Tests nicht alle möglichen Angriffsvektoren oder die in einer Produktions-App erforderliche Testebene darstellen, dienen sie als Erinnerung, dass die Sicherstellung der Codequalität und -sicherheit eine Voraussetzung ist. Die Datei **SecurityTest.cs** ist Teil des Projekts „ECommercePricingEngine“.
+    Möglicherweise stellen Sie fest, dass die Ausgabe grundlegende Sicherheitstests für ungültige Eingaben und böswillige Versuche zur Manipulation der Preise enthält. Obwohl diese Tests nicht alle möglichen Angriffsvektoren oder die in einer Produktions-App erforderliche Testebene darstellen, dienen sie als Erinnerung, dass die Sicherstellung der Codequalität und -sicherheit eine Voraussetzung ist. Die Datei**SecurityTest.cs** ist Teil des Projekts „ECommercePricingEngine“.
 
     > [!NOTE]
-    > Eine Kopie der Ausgabe finden Sie in der Datei **Output-ECommercePricingEngine.txt**, die im Ordner „ECommercePricingEngine“ enthalten ist. Sie können eine eigene Ausgabedatei erstellen, wenn Sie Ergebnisse vergleichen oder Beispieldaten ändern möchten. Wenn Sie das Ende dieser Übung erreichen, verwenden Sie die Ausgabedatei, um sicherzustellen, dass Ihr umgestalteter Code dieselben Ergebnisse wie der ursprüngliche Code generiert.
+    > Eine Kopie der Ausgabe finden Sie in der Datei**Output-ECommercePricingEngine.txt**, die im Ordner „ECommercePricingEngine“ enthalten ist. Sie können eine eigene Ausgabedatei erstellen, wenn Sie Ergebnisse vergleichen oder Beispieldaten ändern möchten. Wenn Sie das Ende dieser Übung erreichen, verwenden Sie die Ausgabedatei, um sicherzustellen, dass Ihr umgestalteter Code dieselben Ergebnisse wie der ursprüngliche Code generiert.
 
-    So führen Sie das Projekt aus: Wenn die Datei „ECommercePricingDemo.cs“ im Editor von Visual Studio Code geöffnet ist, können Sie das Projekt ausführen, indem Sie die Schaltfläche „Ausführen“ (Projekt ausführen, das dieser Datei zugeordnet ist) auswählen, die sich in der oberen rechten Ecke des Editor-Bereichs befindet. Um das Projekt aus der PROJEKTMAPPEN-EXPLORER-Ansicht auszuführen, klicken Sie mit der rechten Maustaste auf **ECommercePricingEngine**, wählen Sie **Debuggen** aus und dann **Neue Instanz starten**.
+    So führen Sie das Projekt aus: Wenn die Datei „ECommercePricingDemo.cs“ im Editor von Visual Studio Code geöffnet ist, können Sie das Projekt ausführen, indem Sie die Schaltfläche „Ausführen“ (Projekt ausführen, das dieser Datei zugeordnet ist) auswählen, die sich in der oberen rechten Ecke des Editor-Bereichs befindet. Um das Projekt aus der PROJEKTMAPPEN-EXPLORER-Ansicht auszuführen, klicken Sie mit der rechten Maustaste auf**ECommercePricingEngine**, wählen Sie**Debuggen** aus und dann**Neue Instanz starten**.
 
 ### Identifizieren von Umgestaltungsmöglichkeiten im Code des E-Commerce-Preismoduls mithilfe von GitHub Copilot
 
@@ -281,22 +281,22 @@ In dieser Aufgabe verwenden Sie GitHub Copilot, um bestimmte Umgestaltungsmögli
 
 Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
-1. Stellen Sie sicher, dass die Chat-Ansicht von GitHub Copilot im **Fragemodus** geöffnet ist und das Modell **GPT-4.1** ausgewählt ist.
+1. Stellen Sie sicher, dass die Chat-Ansicht von GitHub Copilot im**Fragemodus** geöffnet ist und das Modell**GPT-4.1** ausgewählt ist.
 
-1. Fügen Sie die Datei **ECommercePricingDemo.cs** per Drag-and-Drop zum Chat-Kontext hinzu.
+1. Fügen Sie die Datei**ECommercePricingDemo.cs** per Drag-and-Drop zum Chat-Kontext hinzu.
 
-    Obwohl „ECommercePricingDemo.cs“ bereits im Editor von Visual Studio Code geöffnet ist, animiert das Hinzufügen zum Chat-Kontext GitHub Copilot, die gesamte Codedatei zu analysieren, was zu genaueren Vorschlägen führen kann. Das Hinzufügen relevanter Dateien zum Chat-Kontext ist eine bewährte Methode bei der Verwendung von GitHub Copilot, auch wenn Sie die Tags **@workspace** oder **#codebase** in Ihrem Prompt einschließen.
+    Obwohl „ECommercePricingDemo.cs“ bereits im Editor von Visual Studio Code geöffnet ist, animiert das Hinzufügen zum Chat-Kontext GitHub Copilot, die gesamte Codedatei zu analysieren, was zu genaueren Vorschlägen führen kann. Das Hinzufügen relevanter Dateien zum Chat-Kontext ist eine bewährte Methode bei der Verwendung von GitHub Copilot, auch wenn Sie die Tags**@workspace** oder **#codebase** in Ihrem Prompt einschließen.
 
 1. Senden Sie einen Prompt, der GitHub Copilot auffordert, Umgestaltungsmöglichkeiten zu identifizieren, die die Code-Modularität im Zusammenhang mit den wichtigsten Rabattpfaden verbessern.
 
     Berücksichtigen Sie beim Erstellen des Prompts die folgenden Elemente:
 
-    - Weisen Sie GitHub Copilot an, sich auf die Methode **CalculateFinalPrice** und die verschachtelten Bedingungen zu konzentrieren.
+    - Weisen Sie GitHub Copilot an, sich auf die Methode**CalculateFinalPrice** und die verschachtelten Bedingungen zu konzentrieren.
     - Bitten Sie GitHub Copilot, Optionen vorzuschlagen, die komplexe Logik in besser verwaltbare Hilfsmethoden mit Einzelverantwortung zu verschieben.
     - Listen Sie die wichtigsten Rabattpfade auf, die für die Extraktion in Hilfsmethoden berücksichtigt werden sollten.
     - Heben Sie die Bedeutung der Aufrechterhaltung der Geschäftslogik hervor, während Sie die Codestruktur vereinfachen.
 
-    Es ist häufig von Vorteil, wenn GitHub Copilot Codeinteraktionen bei der Analyse Ihres Codes in Betracht zieht. Sie können die Tags **@workspace** oder **#codebase** verwenden, um GitHub Copilot anzuweisen, Ihre gesamte Codebasis in die Analyse einzuschließen.
+    Es ist häufig von Vorteil, wenn GitHub Copilot Codeinteraktionen bei der Analyse Ihres Codes in Betracht zieht. Sie können die Tags**@workspace** oder **#codebase** verwenden, um GitHub Copilot anzuweisen, Ihre gesamte Codebasis in die Analyse einzuschließen.
 
     Zum Beispiel:
 
@@ -345,7 +345,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
 1. Nehmen Sie sich eine Minute Zeit, um die Vorschläge von GitHub Copilot zum Vereinfachen der bedingten Logik und zum Reduzieren der Schachtelungsebenen zu überprüfen.
 
-    GitHub Copilot sollte eine Liste mit Vorschlägen bereitstellen, um die bedingte Logik zu vereinfachen und Schachtelungsebenen zu reduzieren. Einige der Vorschläge sind möglicherweise Wiederholungen von vorherigen Vorschlägen. Das ist zu erwarten. Es sollten jedoch neue Vorschläge zum Reduzieren von Schachtelungsebenen und zur Verbesserung der Lesbarkeit angezeigt werden, z. B.:
+    GitHub Copilot sollte eine Liste mit Vorschlägen bereitstellen, um die bedingte Logik zu vereinfachen und Schachtelungsebenen zu reduzieren. Einige der Vorschläge sind möglicherweise Wiederholungen vorheriger Vorschlägen. Das ist zu erwarten. Es sollten jedoch neue Vorschläge zum Reduzieren von Schachtelungsebenen und zur Verbesserung der Lesbarkeit angezeigt werden, z. B.:
 
     - Verwenden Sie frühzeitige Rückgabe- oder Wächter-Klauseln, um Logik zu vereinfachen, Einzüge zu reduzieren und Flow zu verdeutlichen.
     - Verwenden Sie lokale Hilfsfunktionen, um Duplizierung zu entfernen und die Absicht zu verdeutlichen.
@@ -358,7 +358,7 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
 ### Umgestalten des Codes des E-Commerce-Preismoduls mithilfe von GitHub Copilot-Agent
 
-GitHub Copilot verfügt über drei Modi, **Frage**, **Bearbeitung**und **Agent**. Wenn GitHub Copilot im Agent-Modus ausgeführt wird, funktioniert GitHub Copilot als autonomer KI-Agent.
+GitHub Copilot verfügt über drei Modi,**Frage**,**Bearbeitung**und**Agent**. Wenn GitHub Copilot im Agent-Modus ausgeführt wird, funktioniert GitHub Copilot als autonomer KI-Agent.
 
 Im Agent-Modus:
 
@@ -374,11 +374,11 @@ In diesem Abschnitt der Übung verwenden Sie GitHub Copilot-Agent, um die Klasse
 
 Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
-1. Stellen Sie sicher, dass die Chat-Ansicht von GitHub Copilot in Visual Studio Code geöffnet ist.
+1. Stellen Sie sicher, dass die GitHub Copilot-Chatansicht in Visual Studio Code geöffnet ist.
 
-1. Wählen Sie in der Chat-Ansicht den **Agent-Modus** aus.
+1. Wählen Sie in der Chat-Ansicht den**Agent-Modus** aus.
 
-    Das Dropdownmenü **Modus festlegen** befindet sich in der unteren linken Ecke der Chat-Ansicht. Wenn Sie **Agent** auswählen, wechselt GitHub Copilot in den Agent-Modus und arbeitet autonom an Aufgaben, die Sie zuweisen.
+    Das Dropdownmenü**Modus festlegen** befindet sich in der unteren linken Ecke der Chat-Ansicht. Wenn Sie**Agent** auswählen, wechselt GitHub Copilot in den Agent-Modus und arbeitet autonom an Aufgaben, die Sie zuweisen.
 
 1. Nehmen Sie sich eine Minute Zeit, um die Anforderungen für die Aufgabe zu ermitteln, die Sie GitHub Copilot-Agent zuweisen.
 
@@ -426,30 +426,30 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
 1. Verwenden Sie die Chat-Ansicht, um Ihre Aufgabe GitHub Copilot-Agent zuzuweisen.
 
-    GitHub Copilot-Agent wertet die Aufgabe und die Codebasis aus, um einen Ansatz für die Umgestaltung von „CalculateFinalPrice“ zu entwickeln und die Mitgliedschaftsrabattlogik in eine neue Hilfsmethode zu extrahieren. Der Agent testet die Code-Updates in verschiedenen Phasen, um sicherzustellen, dass die Umgestaltung erfolgreich ist und die Geschäftslogik intakt bleibt.
+    Der GitHub Copilot-Agent wertet die Aufgabe und die Codebasis aus, um einen Ansatz für die Umgestaltung von „CalculateFinalPrice“ zu entwickeln und die Logik für den Mitgliedschaftsrabatt in eine neue Hilfsmethode zu extrahieren. Der Agent testet die Code-Updates in verschiedenen Phasen, damit die Umgestaltung erfolgreich ist und die Geschäftslogik intakt bleibt.
 
     Nach der Übermittlung der Aufgabe beginnt GitHub Copilot-Agent mit der Arbeit an der Aufgabe. Sie können den Fortschritt in der Chat-Ansicht überwachen.
 
     > [!NOTE]
-    > Wenn Sie Änderungen an der Aufgabe vornehmen müssen, können Sie den Text in der Chat-Ansicht bearbeiten und ihn erneut übermitteln. GitHub Copilot-Agent wertet die Aufgabe erneut aus und arbeitet weiter daran.
+    > Wenn Sie Änderungen an der Aufgabe vornehmen müssen, können Sie den Text in der Chat-Ansicht bearbeiten und ihn erneut übermitteln. Der GitHub Copilot-Agent überprüft die Aufgabe noch einmal und arbeitet an ihr weiter.
 
 1. Überwachen Sie die Chat-Ansicht, während GitHub Copilot-Agent an der Aufgabe arbeitet.
 
-    Der Agent stellt Updates über seinen Fortschritt bereit, einschließlich aller Herausforderungen, die auftreten und wie er plant, diese zu beheben. Er kann bei Bedarf auch nach Klarstellung oder zusätzlichen Informationen fragen. Stellen Sie bei Bedarf Unterstützung bereit, indem Sie in der Chat-Ansicht auf den Prompt des Agenten reagieren.
+    Der Agent bietet Updates über seinen Fortschritt, einschließlich aller auftretenden Herausforderungen und ihrer geplanten Behebung. Er kann bei Bedarf auch nach Klarstellung oder zusätzlichen Informationen fragen. Stellen Sie bei Bedarf Unterstützung bereit, indem Sie in der Chat-Ansicht auf den Prompt des Agenten reagieren.
 
 1. Überprüfen Sie nach Abschluss der Umgestaltungsaufgabe die vorgeschlagenen Updates im Editor von Visual Studio Code.
 
     Überprüfen Sie die von GitHub Copilot vorgeschlagenen Änderungen immer, bevor Sie sie akzeptieren. Stellen Sie sicher, dass die Updates mit Ihrer beabsichtigten Geschäftslogik, der App-Funktionalität und den Codierungsstandards übereinstimmen.
 
-    Der umgestaltete Code sollte eine stark vereinfachte **CalculateFinalPrice**-Methode enthalten, die hauptsächlich aus Methodenaufrufen für Hilfsmethoden besteht, die Mitgliedschaftsrabatte, Coupon-Rabatte und Massenrabatte verwalten. Die Komplexität der ursprünglichen Methode sollte erheblich reduziert sein, wodurch sie einfacher zu lesen und verwalten ist.
+    Der umgestaltete Code sollte eine stark vereinfachte**CalculateFinalPrice**-Methode enthalten, die hauptsächlich aus Methodenaufrufen für Hilfsmethoden besteht, die Mitgliedschaftsrabatte, Coupon-Rabatte und Massenrabatte verwalten. Die Komplexität der ursprünglichen Methode sollte erheblich reduziert sein, wodurch sie einfacher zu lesen und verwalten ist.
 
     Die Hilfsmethode für Mitgliedschaftsrabatte sollte auch umgestaltet werden, um die komplexe Logik um Mitgliedschaftsebenen zu behandeln, mit einer zusätzlichen Hilfsmethode für jede Stufe (Premium, Gold, Silber und Personen, die zum ersten Mal einkaufen).
 
-1. Wählen Sie in der Chat-Ansicht die Option **Beibehalten**aus, um alle Bearbeitungen zu akzeptieren.
+1. Wählen Sie in der Chat-Ansicht die Option**Beibehalten**aus, um alle Bearbeitungen zu akzeptieren.
 
     Sie können die vorgeschlagenen Änderungen ablehnen, wenn sie Ihre Erwartungen nicht erfüllen, oder Sie können einen Teil der Änderungen akzeptieren und andere ablehnen. Die Arbeit mit GitHub Copilot zum Umgestalten Ihres Codes ist häufig ein iterativer Prozess, der das Verfeinern Ihres Prompts zum Erzielen der beabsichtigten Ergebnisse umfasst.
 
-    Wenn Sie die vorgeschlagenen Updates von GitHub Copilot akzeptieren und dann feststellen, dass die Vorschläge Probleme eingeführt haben, die möglicherweise schwierig zu lösen sind, können Sie die Änderungen rückgängig machen, indem Sie in der Chat-Ansicht die Option **Letzte Anforderung rückgängig machen** auswählen oder die Funktion zum Rückgängigmachen von Visual Studio Code verwenden.
+    Wenn Sie die vorgeschlagenen Updates von GitHub Copilot akzeptieren und dann feststellen, dass die Vorschläge Probleme eingeführt haben, die möglicherweise schwierig zu lösen sind, können Sie die Änderungen rückgängig machen, indem Sie in der Chat-Ansicht die Option**Letzte Anforderung rückgängig machen** auswählen oder die Funktion zum Rückgängigmachen von Visual Studio Code verwenden.
 
 1. Bitten Sie GitHub Copilot, die implementierten Codeumgestaltungs-Updates zu erläutern.
 
@@ -518,22 +518,22 @@ Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
 1. Erstellen Sie das Projekt, um sicherzustellen, dass keine Kompilierungsfehler auftreten.
 
-    Klicken Sie beispielsweise in der PROJEKTMAPPEN-EXPLORER-Ansicht mit der rechten Maustaste auf **ECommercePricingEngine** und wählen Sie dann **Erstellen** aus.
+    Klicken Sie beispielsweise in der PROJEKTMAPPEN-EXPLORER-Ansicht mit der rechten Maustaste auf**ECommercePricingEngine** und wählen Sie dann**Erstellen** aus.
 
     Wenn Kompilierungsfehler auftreten, überprüfen Sie den umgestalteten Code, und beheben Sie alle Probleme. GitHub Copilot kann bei Bedarf Kompilierungsfehler beheben.
 
 1. Führen Sie die Anwendung aus, um die umgestaltete Preislogik zu testen.
 
-    Wenn die Datei „ECommercePricingDemo.cs“ im Editor von Visual Studio Code geöffnet ist, können Sie das Projekt ausführen, indem Sie die Schaltfläche „Ausführen“ (Projekt ausführen, das dieser Datei zugeordnet ist) auswählen, die sich in der oberen rechten Ecke des Editor-Bereichs befindet. Um das Projekt aus der PROJEKTMAPPEN-EXPLORER-Ansicht auszuführen, klicken Sie mit der rechten Maustaste auf **ECommercePricingEngine**, wählen Sie **Debuggen** aus und dann **Neue Instanz starten**.
+    Wenn die Datei „ECommercePricingDemo.cs“ im Editor von Visual Studio Code geöffnet ist, können Sie das Projekt ausführen, indem Sie die Schaltfläche „Ausführen“ (Projekt ausführen, das dieser Datei zugeordnet ist) auswählen, die sich in der oberen rechten Ecke des Editor-Bereichs befindet. Um das Projekt aus der PROJEKTMAPPEN-EXPLORER-Ansicht auszuführen, klicken Sie mit der rechten Maustaste auf**ECommercePricingEngine**, wählen Sie**Debuggen** aus und dann**Neue Instanz starten**.
 
     Die Anwendung sollte ohne Fehler ausgeführt werden und Preisberechnungen für verschiedene Testszenarien anzeigen.
 
     > [!IMPORTANT]
-    > Wenn der umgestaltete Code auf einen Laufzeitfehler stößt, überprüfen Sie die von GitHub Copilot-Agent vorgenommenen Änderungen und beheben Sie die Probleme mit GitHub Copilot. Bei Bedarf können Sie die Option **Letzte Anforderung rückgängig machen** in der Chat-Ansicht verwenden, um den letzten Satz von Änderungen rückgängig zu machen, und dann die Aufgabe aktualisieren, die GitHub Copilot-Agent zugewiesen ist. Das Durchlaufen von Prompts/Aufgaben zum Verfeinern der Ergebnisse ist bei der Arbeit mit KI-fähigen Tools die üblich.
+    > Wenn der umgestaltete Code auf einen Laufzeitfehler stößt, überprüfen Sie die von GitHub Copilot-Agent vorgenommenen Änderungen und beheben Sie die Probleme mit GitHub Copilot. Bei Bedarf können Sie die Option**Letzte Anforderung rückgängig machen** in der Chat-Ansicht verwenden, um den letzten Satz von Änderungen rückgängig zu machen, und dann die Aufgabe aktualisieren, die GitHub Copilot-Agent zugewiesen ist. Das Durchlaufen von Prompts/Aufgaben zum Verfeinern der Ergebnisse ist bei der Arbeit mit KI-fähigen Tools die üblich.
 
 1. Bitten Sie GitHub Copilot, die vom umgestalteten Code generierte Ausgabe mit der ursprünglichen Ausgabe zu vergleichen.
 
-    Die ursprüngliche Ausgabe, **Output-ECommercePricingEngine.txt**, ist im Ordner „ECommercePricingEngine“ enthalten.
+    Die ursprüngliche Ausgabe,**Output-ECommercePricingEngine.txt**, ist im Ordner „ECommercePricingEngine“ enthalten.
 
     Sie können eine zweite Ausgabedatei erstellen und GitHub Copilot bitten, alle Unterschiede zwischen den beiden Dateien zu ermitteln.
 
@@ -550,9 +550,9 @@ In dieser optionalen Aufgabe wenden Sie dieselben Techniken an, die Sie im E-Com
 
 Führen Sie die folgenden Schritte aus, um dies abzuschließen:
 
-1. Erweitern Sie den Projektordner **LoanApprovalWorkflow**, öffnen Sie die Datei **LoanApprovalDemo.cs** und überprüfen Sie dann den Code.
+1. Erweitern Sie den Projektordner**LoanApprovalWorkflow**, öffnen Sie die Datei**LoanApprovalDemo.cs** und überprüfen Sie dann den Code.
 
-1. Verwenden Sie GitHub Copilot, um den Code in **LoanApprovalDemo.cs** zu erläutern, einschließlich der komplexen bedingten Logik in der Methode „Evaluate“ der Klasse „LoanEvaluator“.
+1. Verwenden Sie GitHub Copilot, um den Code in**LoanApprovalDemo.cs** zu erläutern, einschließlich der komplexen bedingten Logik in der Methode „Evaluate“ der Klasse „LoanEvaluator“.
 
 1. Führen Sie das Projekt „LoanApprovalWorkflow“ aus, um die erste Kreditgenehmigungslogik zu testen und einen Datensatz der Ausgabe zu erstellen.
 
@@ -572,4 +572,4 @@ In dieser Übung haben Sie gelernt, wie Sie GitHub Copilot verwenden, um komplex
 
 ## Bereinigen
 
-Nachdem Sie die Übung abgeschlossen haben, nehmen Sie sich eine Minute Zeit, um sicherzustellen, dass Sie keine Änderungen an Ihrem GitHub-Konto oder GitHub Copilot-Abonnement vorgenommen haben, die Sie nicht beibehalten möchten. Falls Sie Änderungen vorgenommen haben, setzen Sie diese nach Bedarf zurück. Wenn Sie einen lokalen PC als Übungsumgebung verwenden, können Sie den Ordner der Beispielprojekte, den Sie für diese Übung erstellt haben, archivieren oder löschen.
+Nachdem Sie die Übung abgeschlossen haben, nehmen Sie sich eine Minute Zeit, um sicherzustellen, dass Sie keine Änderungen an Ihrem GitHub-Konto oder GitHub Copilot-Abonnement vorgenommen haben, das Sie nicht beibehalten möchten. Wenn Sie Änderungen vorgenommen haben, setzen Sie sie nach Bedarf zurück. Wenn Sie einen lokalen PC als Lab-Umgebung verwenden, können Sie den Beispielprojektordner archivieren oder löschen, den Sie für diese Übung erstellt haben.
